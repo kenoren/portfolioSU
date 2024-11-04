@@ -1,0 +1,98 @@
+/* Style de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;  /* Prend toute la largeur de l'écran */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    padding: 0 10vw; /* Ajoute un espace sur les côtés */
+}
+
+.navbar {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #F2EFDF;
+    font-size: 1rem;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    border-radius: 20px;
+}
+
+.navbar .logo {
+    position: absolute;
+    left: 20px;
+}
+
+.navbar nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Section des compétences */
+.competences {
+    max-width: 466px;
+}
+
+.competences h1 {
+    font-size: 6em;
+    margin-bottom: 20px;
+}
+
+/* Style de chaque compétence */
+.skill {
+    margin-bottom: 15px;
+    
+}
+
+.skill-name {
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Barre de progression */
+.progress-bar {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;  /* Adapté à la largeur de la compétence */
+    height: 15px;
+}
+
+.progress {
+    background-color: #90EE90;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Section photo */
+.photo img {
+    width: 601px; /* Taille de la photo */
+    height: auto;
+    border-radius: 10px;
+}

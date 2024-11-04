@@ -4,10 +4,15 @@ require 'vendor/autoload.php'; // Chargez l'autoloader de Composer
 use Symfony\Component\Yaml\Yaml;
 
 // Charger le contenu du fichier YAML
-$contenu = Yaml::parseFile('data/data.yaml');
+try {
+    $contenu = Yaml::parseFile('data/data.yaml');
+} catch (Exception $e) {
+    echo 'Erreur lors du chargement du fichier YAML: ',  $e->getMessage();
+    exit;
+}
 
 // Extraire les données utilisateur
-$utilisateur = $contenu['utilisateur'];
+$utilisateur = $contenu['utilisateur'] ?? []; // Ajoutez un fallback si 'utilisateur' n'existe pas
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +20,11 @@ $utilisateur = $contenu['utilisateur'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $utilisateur['prenom'] . ' ' . $utilisateur['nom']; ?> - Développeur & UX/UI</title>
+    <title><?php echo htmlspecialchars($utilisateur['prenom'] . ' ' . $utilisateur['nom']); ?> - Développeur & UX/UI</title>
+    
+    <!-- Inclusion des deux fichiers CSS -->
     <link rel="stylesheet" href="./assets/portfolio.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -25,28 +33,28 @@ $utilisateur = $contenu['utilisateur'];
             <img src="./assets/images/logo.png" alt="Logo">
         </div>
         <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Compétences</a>
+            <a href="#hero">Accueil</a>
+            <a href="pages/accueil.php">Compétences</a>
             <a href="#">Réalisations</a>
             <a href="#">Formation</a>
             <a href="#">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-       <div class="hero-content">
-           <span class="first-name"><?php echo $utilisateur['prenom']; ?></span>
-           <div class="last-name-container">
-               <span class="last-name"><?php echo substr($utilisateur['nom'], 0, 3); ?></span>
-               <span class="highlight"><?php echo substr($utilisateur['nom'], 3); ?></span>
-           </div>
-           <p class="subtitle"><?php echo $utilisateur['sous_titre']; ?></p>
-           <div class="scroll-down">Scroll down</div>
-       </div>
-       <div class="hero-image">
-           <img src="<?php echo $utilisateur['image']; ?>" alt="<?php echo $utilisateur['prenom'] . ' ' . $utilisateur['nom']; ?>">
-       </div>
-   </section>
-    
+    <!-- Section Accueil (Hero) -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <span class="first-name"><?php echo htmlspecialchars($utilisateur['prenom']); ?></span>
+            <div class="last-name-container">
+                <span class="last-name"><?php echo htmlspecialchars(substr($utilisateur['nom'], 0, 3)); ?></span>
+                <span class="highlight"><?php echo htmlspecialchars(substr($utilisateur['nom'], 3)); ?></span>
+            </div>
+            <p class="subtitle"><?php echo htmlspecialchars($utilisateur['sous_titre']); ?></p>
+            <div class="scroll-down">Scroll down</div>
+        </div>
+        <div class="hero-image">
+            <img src="<?php echo htmlspecialchars($utilisateur['image']); ?>" alt="<?php echo htmlspecialchars($utilisateur['prenom'] . ' ' . $utilisateur['nom']); ?>">
+        </div>
+    </section>
 </body>
 </html>
