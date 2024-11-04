@@ -1,33 +1,52 @@
+<?php
+require 'vendor/autoload.php'; // Chargez l'autoloader de Composer
+
+use Symfony\Component\Yaml\Yaml;
+
+// Charger le contenu du fichier YAML
+$contenu = Yaml::parseFile('data/data.yaml');
+
+// Extraire les données utilisateur
+$utilisateur = $contenu['utilisateur'];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?php echo $utilisateur['prenom'] . ' ' . $utilisateur['nom']; ?> - Développeur & UX/UI</title>
     <link rel="stylesheet" href="./assets/portfolio.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Portfolio - Mathis.F</title>
 </head>
 <body>
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="container">
-        <header>
-            <img src="./assets/images/logo.png" alt="logo">
-            <nav>
-                <ul>
-                    <li>Accueil</li>
-                    <li>Compétences</li>
-                    <li>Réalisation</li>
-                    <li>Formation</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>  
-        </header>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Compétences</a>
+            <a href="#">Réalisations</a>
+            <a href="#">Formation</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-        <main>
-            <img src="./assets/images/moi.png" alt="moi">
-        </main>
-    </div>
+    <section class="hero">
+       <div class="hero-content">
+           <span class="first-name"><?php echo $utilisateur['prenom']; ?></span>
+           <div class="last-name-container">
+               <span class="last-name"><?php echo substr($utilisateur['nom'], 0, 3); ?></span>
+               <span class="highlight"><?php echo substr($utilisateur['nom'], 3); ?></span>
+           </div>
+           <p class="subtitle"><?php echo $utilisateur['sous_titre']; ?></p>
+           <div class="scroll-down">Scroll down</div>
+       </div>
+       <div class="hero-image">
+           <img src="<?php echo $utilisateur['image']; ?>" alt="<?php echo $utilisateur['prenom'] . ' ' . $utilisateur['nom']; ?>">
+       </div>
+   </section>
+    
 </body>
 </html>

@@ -1,0 +1,6 @@
+# contenu.yaml
+utilisateur:
+  prenom: "Mathis"
+  nom: "FOUREY"
+  sous_titre: "Développeur & UX/UI"
+  image: "./assets/images/moi.png" 
