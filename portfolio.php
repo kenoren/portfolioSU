@@ -28,13 +28,14 @@ $utilisateur = $contenu['utilisateur'] ?? []; // Ajoutez un fallback si 'utilisa
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<section id="page1" class="page page-accueil">
     <header class="navbar">
         <div class="logo">
             <img src="./assets/images/logo.png" alt="Logo">
         </div>
         <nav>
-            <a href="#hero">Accueil</a>
-            <a href="pages/accueil.php">Compétences</a>
+            <a href="#page1">Accueil</a>
+            <a href="#page2">Compétences</a>
             <a href="#">Réalisations</a>
             <a href="#">Formation</a>
             <a href="#">Contact</a>
@@ -43,6 +44,9 @@ $utilisateur = $contenu['utilisateur'] ?? []; // Ajoutez un fallback si 'utilisa
 
     <!-- Section Accueil (Hero) -->
     <section id="hero" class="hero">
+        <div class="circle circle-top"></div>
+        <div class="circle circle-bottom"></div>
+
         <div class="hero-content">
             <span class="first-name"><?php echo htmlspecialchars($utilisateur['prenom']); ?></span>
             <div class="last-name-container">
@@ -50,11 +54,41 @@ $utilisateur = $contenu['utilisateur'] ?? []; // Ajoutez un fallback si 'utilisa
                 <span class="highlight"><?php echo htmlspecialchars(substr($utilisateur['nom'], 3)); ?></span>
             </div>
             <p class="subtitle"><?php echo htmlspecialchars($utilisateur['sous_titre']); ?></p>
-            <div class="scroll-down">Scroll down</div>
         </div>
+        <div class="scroll-down">Scroll down</div>
         <div class="hero-image">
             <img src="<?php echo htmlspecialchars($utilisateur['image']); ?>" alt="<?php echo htmlspecialchars($utilisateur['prenom'] . ' ' . $utilisateur['nom']); ?>">
         </div>
     </section>
+</section>
+
+<section id="page2" class="page page-competences">
+<div class="container">
+        <div class="competences">
+            <h1>COMPETENCES</h1>
+            <?php
+                // Liste des compétences et leurs niveaux (en pourcentage)
+                $competences = [
+                    "HTML" => 80,
+                    "CSS" => 70,
+                    "JS" => 60,
+                    "PHP" => 50,
+                    "FIGMA" => 65
+                ];
+
+                // Génération des barres de progression
+                foreach ($competences as $comp => $level) {
+                    echo "<div class='skill'>";
+                    echo "<span class='skill-name'>$comp</span>";
+                    echo "<div class='progress-bar'><div class='progress' style='width: $level%;'></div></div>";
+                    echo "</div>";
+                }
+            ?>
+        </div>
+        <div class="photo">
+            <img src="../assets/images/moicomplet.png" alt="Photo du profil">
+        </div>
+    </div>
+</section>
 </body>
 </html>
