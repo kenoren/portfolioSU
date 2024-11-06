@@ -7,12 +7,22 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #D7D8D9;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.page {
+    scroll-snap-align: start;
+}
+
+.page-accueil {
+    background-color: #D8D9D0;
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
 }
 
 /* Barre de navigation */
@@ -24,13 +34,14 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #F2EFDF;
+    background-color: #fff;
     font-size: 1rem;
     position: fixed;
     top: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 10;
     border-radius: 20px;
+    animation: fadeIn 2s ease-out forwards;
 }
 
 .navbar .logo {
@@ -44,6 +55,7 @@ body {
     color: #333;
 }
 
+
 /* Section Hero */
 .hero {
     display: flex;
@@ -56,6 +68,7 @@ body {
     position: relative;
     background-color: #f0f0f0;
     padding-top: 80px; /* Pour laisser de l'espace pour la navbar */
+    overflow: hidden;
 }
 
 .hero-content {
@@ -64,6 +77,64 @@ body {
     top: 60%;
     transform: translateY(-50%);
     text-align: left;
+}
+
+/* Animation pour l'image seulement */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Léger mouvement vers le haut */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Appliquer l'animation uniquement à l'image */
+.hero-image img {
+    width: 100%; /* Adaptez la largeur à 100% */
+    max-width: 955px; /* Limitez la largeur maximale */
+    height: auto;
+    object-fit: cover;
+    animation: fadeInUp 2s ease-out forwards;
+    
+}
+
+/* Cercles décoratifs */
+.circle {
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 50%;
+    animation: fadeInUp 2s ease-out forwards;
+    
+}
+
+.circle-top {
+    top: -20%;
+    left: -5%;
+    width: 35vw;
+    height: 30vw;
+}
+
+.circle-bottom {
+    bottom: -20%;
+    right: -5%;
+    width: 35vw;
+    height: 30vw;
+}
+
+.hero-content p {
+    text-align: right;
 }
 
 .first-name {
@@ -97,63 +168,89 @@ body {
 .scroll-down {
     font-size: 0.8rem;
     color: #888;
-    margin-top: 2rem;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
+    position: fixed; /* Fixe la position */
+    bottom: 20px; /* Distance du bas de la page */
+    left: 20px; /* Distance du côté gauche */
+    z-index: 20; /* Pour s'assurer qu'il est au-dessus des autres éléments */
+    transition: color 0.3s ease; /* Pour une transition de couleur fluide */
+}
+
+.scroll-down:hover {
+    color: #333; /* Change la couleur au survol */
 }
 
 .scroll-down::after {
-    content: '➤'; /* Flèche Unicode */
+    content: '▼'; /* Flèche Unicode pour le bas */
     margin-left: 0.5rem;
-    font-size: 1.2rem;
-    transform: rotate(90deg); /* Pour orienter la flèche vers le bas */
+    font-size: 0.7rem;
     transition: transform 0.3s ease;
 }
 
 .scroll-down:hover::after {
-    transform: translateY(5px) rotate(90deg); /* Animation au survol */
+    transform: translateY(5px); /* Animation au survol */
 }
 
-/* Hero Image */
-.hero-image {
-    position: relative;
-    z-index: 1;
-    margin-top: 10px;
+
+
+.page-competences{
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-image img {
-    width: 100%; /* Adaptez la largeur à 100% */
-    max-width: 955px; /* Limitez la largeur maximale */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;  /* Prend toute la largeur de l'écran */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    padding: 0 10vw; /* Ajoute un espace sur les côtés */
+}
+
+/* Section des compétences */
+.competences {
+    max-width: 466px;
+}
+
+.competences h1 {
+    font-size: 6em;
+    margin-bottom: 20px;
+}
+
+/* Style de chaque compétence */
+.skill {
+    margin-bottom: 15px;
+    
+}
+
+.skill-name {
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Barre de progression */
+.progress-bar {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;  /* Adapté à la largeur de la compétence */
+    height: 15px;
+}
+
+.progress {
+    background-color: #90EE90;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Section photo */
+.photo img {
+    width: 601px; /* Taille de la photo */
     height: auto;
-    object-fit: cover;
+    border-radius: 10px;
 }
-
-/* Cercles décoratifs */
-.hero {
-    position: relative; /* Pour que les éléments enfants soient positionnés par rapport à cet élément */
-    overflow: hidden;   /* Masquer le débordement */
-}
-
-.hero::before,
-.hero::after {
-    content: '';
-    position: absolute;
-    border: 2px solid black;
-    border-radius: 50%;
-}
-
-.hero::before {
-    top: -20%;   /* Ajustez pour positionner le cercle */
-    left: -5%;   /* Ajustez pour positionner le cercle */
-    width: 35vw;  /* Utilisez une unité responsive */
-    height: 30vw; /* Utilisez une unité responsive */
-}
-
-.hero::after {
-    bottom: -20%; /* Ajustez pour positionner le cercle */
-    right: -5%;   /* Ajustez pour positionner le cercle */
-    width: 35vw;  /* Utilisez une unité responsive */
-    height: 30vw; /* Utilisez une unité responsive */
-}
-

@@ -1,6 +1,32 @@
-# contenu.yaml
 utilisateur:
   prenom: "Mathis"
   nom: "FOUREY"
   sous_titre: "Développeur & UX/UI"
-  image: "./assets/images/moi.png" 
+  image: "./assets/images/moi.png"
+  
+  competences:
+    - nom: "Développement (HTML,CSS,JS,PHP)"
+      niveau: 80
+    - nom: "Bureautique (Excel,Words)"
+      niveau: 70
+    - nom: "Réseau (Adresse IP, Analyse de trames)"
+      niveau: 60
+    - nom: "Langues (Français,Anglais,Espagnol)"
+      niveau: 50
+    - nom: "UI (Figma)"
+      niveau: 70
+
+  Realisations:
+  
+  Formations:
+    - nom: "Licence Informatique"
+      etablissement: "Université de Caen"
+      date_debut: ""
+      date_fin: ""
+    
+    - nom: "BTS SIO"
+      etablissement: "CaenSup Saint-Ursule"
+      date_debut: ""
+      date_fin: ""
+
+    
