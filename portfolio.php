@@ -38,7 +38,7 @@ $realisations = $utilisateur['Realisations'] ?? [];
         <nav>
             <a href="#page1">Accueil</a>
             <a href="#page2">Compétences</a>
-            <a href="#">Réalisations</a>
+            <a href="#page3">Réalisations</a>
             <a href="#">Formation</a>
             <a href="#">Contact</a>
         </nav>

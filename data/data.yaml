@@ -18,11 +18,11 @@ utilisateur:
 
   realisations:
     - nom: "Projet1"
-      image: "telechargement1.jpg"
+      image: "projet1.png"
     - nom: "Projet2"
-      image: "telechargement1.jpg"
+      image: "projet2.png"
     - nom: "Projet3"
-      image: "telechargement1.jpg"
+      image: "projet3.png"
 
   
   formations:
