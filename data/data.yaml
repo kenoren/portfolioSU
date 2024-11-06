@@ -16,14 +16,20 @@ utilisateur:
     - nom: "UI (Figma)"
       niveau: 70
 
-  Realisations:
+  realisations:
+    - nom: "Projet1"
+      image: "telechargement1.jpg"
+    - nom: "Projet2"
+      image: "telechargement1.jpg"
+    - nom: "Projet3"
+      image: "telechargement1.jpg"
+
   
-  Formations:
+  formations:
     - nom: "Licence Informatique"
       etablissement: "Université de Caen"
       date_debut: ""
       date_fin: ""
-    
     - nom: "BTS SIO"
       etablissement: "CaenSup Saint-Ursule"
       date_debut: ""

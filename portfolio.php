@@ -14,6 +14,7 @@ try {
 // Extraire les données utilisateur
 $utilisateur = $contenu['utilisateur'] ?? [];
 $competences = $utilisateur['competences'] ?? [];
+$realisations = $utilisateur['Realisations'] ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -63,5 +64,6 @@ $competences = $utilisateur['competences'] ?? [];
     </section>
 </section>
 <?php include("./pages/competences.php")?>
+<?php include("./pages/realisations.php")?>
 </body>
 </html>
