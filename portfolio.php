@@ -12,7 +12,8 @@ try {
 }
 
 // Extraire les données utilisateur
-$utilisateur = $contenu['utilisateur'] ?? []; // Ajoutez un fallback si 'utilisateur' n'existe pas
+$utilisateur = $contenu['utilisateur'] ?? [];
+$competences = $utilisateur['competences'] ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -61,34 +62,6 @@ $utilisateur = $contenu['utilisateur'] ?? []; // Ajoutez un fallback si 'utilisa
         </div>
     </section>
 </section>
-
-<section id="page2" class="page page-competences">
-<div class="container">
-        <div class="competences">
-            <h1>COMPETENCES</h1>
-            <?php
-                // Liste des compétences et leurs niveaux (en pourcentage)
-                $competences = [
-                    "HTML" => 80,
-                    "CSS" => 70,
-                    "JS" => 60,
-                    "PHP" => 50,
-                    "FIGMA" => 65
-                ];
-
-                // Génération des barres de progression
-                foreach ($competences as $comp => $level) {
-                    echo "<div class='skill'>";
-                    echo "<span class='skill-name'>$comp</span>";
-                    echo "<div class='progress-bar'><div class='progress' style='width: $level%;'></div></div>";
-                    echo "</div>";
-                }
-            ?>
-        </div>
-        <div class="photo">
-            <img src="../assets/images/moicomplet.png" alt="Photo du profil">
-        </div>
-    </div>
-</section>
+<?php include("./pages/competences.php")?>
 </body>
 </html>

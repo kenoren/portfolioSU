@@ -18,7 +18,7 @@ body {
 }
 
 .page-accueil {
-    background-color: #D7D8D9;
+    background-color: #D8D9D0;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #F2EFDF;
+    background-color: #fff;
     font-size: 1rem;
     position: fixed;
     top: 0;
