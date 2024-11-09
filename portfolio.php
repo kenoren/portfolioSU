@@ -14,6 +14,7 @@ try {
 // Extraire les données utilisateur
 $utilisateur = $contenu['utilisateur'] ?? [];
 $competences = $utilisateur['competences'] ?? [];
+$realisations = $utilisateur['realisations'] ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +26,8 @@ $competences = $utilisateur['competences'] ?? [];
     
     <!-- Inclusion des deux fichiers CSS -->
     <link rel="stylesheet" href="./assets/portfolio.css">
+    <link rel="stylesheet" href="./assets/pages/competences.css">
+    <link rel="stylesheet" href="./assets/pages/realisations.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -37,7 +40,7 @@ $competences = $utilisateur['competences'] ?? [];
         <nav>
             <a href="#page1">Accueil</a>
             <a href="#page2">Compétences</a>
-            <a href="#">Réalisations</a>
+            <a href="#page3">Réalisations</a>
             <a href="#">Formation</a>
             <a href="#">Contact</a>
         </nav>
@@ -63,5 +66,6 @@ $competences = $utilisateur['competences'] ?? [];
     </section>
 </section>
 <?php include("./pages/competences.php")?>
+<?php include("./pages/realisations.php")?>
 </body>
 </html>
