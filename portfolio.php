@@ -29,6 +29,7 @@ $realisations = $utilisateur['realisations'] ?? [];
     <link rel="stylesheet" href="./assets/pages/competences.css">
     <link rel="stylesheet" href="./assets/pages/realisations.css">
 
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -37,7 +38,15 @@ $realisations = $utilisateur['realisations'] ?? [];
         <div class="logo">
             <img src="./assets/images/logo.png" alt="Logo">
         </div>
-        <nav>
+    
+        <!-- Bouton hamburger pour le menu mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        <nav id="navbar">
             <a href="#page1">Accueil</a>
             <a href="#page2">Compétences</a>
             <a href="#page3">Réalisations</a>
@@ -67,5 +76,7 @@ $realisations = $utilisateur['realisations'] ?? [];
 </section>
 <?php include("./pages/competences.php")?>
 <?php include("./pages/realisations.php")?>
+
+<script src="./js/portfolio.js"></script>
 </body>
 </html>
