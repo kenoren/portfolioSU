@@ -7,54 +7,47 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     scroll-behavior: smooth;
     height: 100%;
     width: 100%;
+    background-color: #D8D9D0; /* Couleur de fond */
+    color: #333;
+   
 }
 
 .page {
     scroll-snap-align: start;
 }
 
-.page-accueil {
-    background-color: #D8D9D0;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 .navbar {
-    margin-top: 2vh;
-    width: 100%;
-    max-width: 70vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 70vw;               /* Largeur spécifique */
+    margin: 0 auto;            /* Centre horizontalement */
     padding: 2vh 4vw;
     background-color: #fff;
     font-size: 1.2rem;
     position: fixed;
-    top: 0;
+    top: 20px;
+    left: 0;                   /* Assure qu'elle commence au bord gauche */
+    right: 0;                  /* Assure qu'elle termine au bord droit */
     box-shadow: 0px 0.4vw 1vw rgba(0, 0, 0, 0.3);
     z-index: 10;
     border-radius: 1.5vw;
     animation: fadeIn 2s ease-out forwards;
 }
 
-/* Réduire la taille du logo sur les petits écrans */
+
 .navbar .logo {
     position: absolute;
-    left: 2vw;  /* Garder une petite marge à gauche */
-    top: 50%;  /* Centrer verticalement dans la barre de navigation */
-    transform: translateY(-50%);  /* Centrer parfaitement le logo */
-    width: auto;
-    height: 10vh;  /* La hauteur du logo dépend de la hauteur de la navbar (6% de la hauteur de la fenêtre) */
-    max-height: 60px;  /* Limiter la hauteur du logo pour ne pas le rendre trop grand */
+    left: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10vh;
+    max-height: 60px;
 }
 
 .navbar nav a {
@@ -64,30 +57,88 @@ body {
     font-size: 1.2rem;
 }
 
-
-
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Utilise 100% de la hauteur de l'écran */
+    height: 100vh;
     width: 100%;
     text-align: center;
     position: relative;
-    padding-top: 80px; /* Espacement de 80px en haut */
+    padding-top: 80px;
     overflow: hidden;
 }
 
 .hero-content {
-    position: absolute;
-    left: 10%; /* Positionnement relatif à 15% de la largeur de l'écran */
-    top: 60%; /* Positionnement vertical à 60% de la hauteur de l'écran */
-    transform: translateY(-50%); /* Centrage vertical */
-    text-align: left;
-    
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding-top: 100px;
 }
 
+.first-name {
+    font-size: 6vw; /* Ajustable pour correspondre exactement */
+    font-weight: 300;
+}
+
+.last-name-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.last-name {
+    font-size: 10vw; /* Ajustable pour correspondre exactement */
+    font-weight: 700;
+}
+
+.highlight {
+    color: #FF5722; /* Couleur personnalisée pour mettre en valeur */
+    font-family: 'Roboto', sans-serif; /* Utilise Roboto */
+    font-weight: 100; /* Applique le poids thin (100) */
+    font-size: 10vw;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.hero-image img {
+    width: 300px; /* Ajustable pour correspondre exactement */
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.3;
+    border: 2px solid #666;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Cercles pour les écrans de grande taille */
+.circle-top {
+    top: -20vh;
+    left: -15vw;
+    width: 50vw;
+    height: 50vw;
+}
+
+.circle-bottom {
+    bottom: -20vh;
+    right: -15vw;
+    width: 50vw;
+    height: 50vw;
+}
 
 @keyframes fadeInUp {
     0% {
@@ -109,85 +160,18 @@ body {
     }
 }
 
-
-.hero-image img {
-    width: 100%; /* L'image prend toute la largeur disponible */
-    max-width: 100vw; /* La largeur maximale de l'image est maintenant 100% de la largeur de l'écran */
-    height: auto; /* L'image garde son ratio d'aspect */
-    object-fit: cover; /* L'image couvre toute la zone disponible sans déformer */
-    animation: fadeInUp 2s ease-out forwards;
-    margin-left: 3vw;
-}
-
-
-.circle {
-    position: absolute;
-    border: 2px solid black;
-    border-radius: 50%;
-    animation: fadeInUp 2s ease-out forwards;
-    
-}
-
-.circle-top {
-    top: -20%;
-    left: -5%;
-    width: 35vw;
-    height: 30vw;
-}
-
-.circle-bottom {
-    bottom: -20%;
-    right: -5%;
-    width: 35vw;
-    height: 30vw;
-}
-
-.hero-content p {
-    text-align: right;
-    font-size: 1.5rem; /* Ajuster la taille du texte pour qu'il soit plus petit sur les petits écrans */
-}
-
-.first-name {
-    font-size: 3vw; /* Utiliser des unités en vw pour que la taille soit relative à la largeur de l'écran */
-    font-weight: 300;
-    margin-left: 1vw;
-}
-
-.last-name-container {
-    display: flex;
-    gap: 22vw; /* Utiliser vw pour l'écart afin que l'espace s'adapte à l'écran */
-    align-items: baseline;
-}
-
-.last-name {
-    font-size: 15vw; /* Ajuster la taille en fonction de la largeur de l'écran */
-    font-weight: 700;
-}
-
-.highlight {
-    font-size: 15vw; /* Ajuster la taille en fonction de la largeur de l'écran */
-    font-weight: 700;
-}
-
-.subtitle {
-    font-size: 3vw; /* Utiliser des unités relatives comme vw pour que le texte soit fluide */
-    color: #666;
-    margin-top: 1rem;
-}
-
-.scroll-down {
-    font-size: 1.2rem; /* Augmenter légèrement la taille pour une meilleure visibilité */
+/*.scroll-down {
+    font-size: 1rem;
     color: #888;
-    position: fixed; 
-    bottom: 5vh; /* Utiliser vh pour la position verticale afin de garder de l'espace sur les petits écrans */
-    left: 5vw; /* Utiliser vw pour le positionnement horizontal */
-    z-index: 20; 
-    transition: color 0.3s ease; 
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: color 0.3s ease;
 }
-
 
 .scroll-down:hover {
-    color: #333; 
+    color: #333;
 }
 
 .scroll-down::after {
@@ -198,20 +182,19 @@ body {
 }
 
 .scroll-down:hover::after {
-    transform: translateY(5px); 
-}
+    transform: translateY(5px);
+}*/
 
-
-
+/* Bouton hamburger pour mobile */
 .hamburger {
-    display: none; /* Il est caché par défaut */
+    display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    position: absolute; /* On l'extrait de l'ordre normal du flux */
-    right: 20px; /* Positionner à 20px du côté droit */
-    top: 50%; /* Placer au milieu verticalement */
-    transform: translateY(-50%); /* Centrer verticalement */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .hamburger span {
@@ -221,48 +204,125 @@ body {
     background-color: #333;
 }
 
-/* Afficher le bouton hamburger et masquer le menu pour les petits écrans */
+/* Responsive pour petit écran */
 @media (max-width: 768px) {
-    nav {
-        display: none; /* Masquer le menu par défaut */
+    .hero-content {
+        padding-top: 60px;
+        display: flex;
         flex-direction: column;
+        align-items: center; /* Centre le contenu horizontalement */
+        justify-content: center; /* Centre le contenu verticalement */
+        text-align: center; /* Assure que le texte est centré */
+    }
+
+    .first-name, .subtitle {
+        font-size: 5vw;
+    }
+
+    .last-name, .highlight {
+        font-size: 8vw;
+        margin: 0; /* Enlève les marges qui pourraient affecter le centrage */
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-top {
+        top: -10vh;
+        left: -20vw;
+        width: 80vw;
+        height: 80vw;
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .circle-bottom {
+        bottom: -10vh;
+        right: -20vw;
+        width: 80vw;
+        height: 80vw;
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    nav {
+        display: none;
         position: absolute;
-        top: 60px; /* Ajustez selon la hauteur de la navbar */
+        top: 60px;
         right: 0;
         background-color: #fff;
         width: 100%;
         padding: 1em;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-    /* Afficher le menu quand la classe `open` est ajoutée */
+
     nav.open {
         display: flex;
+        flex-direction: column;
     }
 
-    /* Afficher le bouton hamburger */
     .hamburger {
         display: flex;
     }
 }
 
-@media (min-width:768px) and (max-width: 1388){
-    nav {
-        display: none; /* Masquer le menu par défaut */
+/* Responsive pour écrans moyens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content {
+        padding-top: 60px;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .first-name, .subtitle {
+        font-size: 5vw;
+    }
+
+    .last-name, .highlight {
+        font-size: 8vw;
+        margin: 0; /* Assure le centrage sans marges qui pourraient perturber */
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-top {
+        top: -10vh;
+        left: -20vw;
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .circle-bottom {
+        bottom: -10vh;
+        right: -20vw;
+        width: 60vw;
+        height: 60vw;
+    }
+
+    nav {
+        display: none;
         position: absolute;
-        top: 60px; /* Ajustez selon la hauteur de la navbar */
+        top: 60px;
         right: 0;
         background-color: #fff;
         width: 100%;
         padding: 1em;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-    /* Afficher le menu quand la classe `open` est ajoutée */
+
     nav.open {
         display: flex;
+        flex-direction: column;
     }
 
-    /* Afficher le bouton hamburger */
     .hamburger {
         display: flex;
     }

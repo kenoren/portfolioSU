@@ -29,7 +29,7 @@ $realisations = $utilisateur['realisations'] ?? [];
     <link rel="stylesheet" href="./assets/pages/competences.css">
     <link rel="stylesheet" href="./assets/pages/realisations.css">
 
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -68,7 +68,7 @@ $realisations = $utilisateur['realisations'] ?? [];
             </div>
             <p class="subtitle"><?php echo htmlspecialchars($utilisateur['sous_titre']); ?></p>
         </div>
-        <div class="scroll-down">Scroll down</div>
+        <!--<div class="scroll-down">Scroll down</div> -->
         <div class="hero-image">
             <img src="<?php echo htmlspecialchars($utilisateur['image']); ?>" alt="<?php echo htmlspecialchars($utilisateur['prenom'] . ' ' . $utilisateur['nom']); ?>">
         </div>

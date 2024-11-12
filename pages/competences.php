@@ -19,7 +19,7 @@ $competences = $utilisateur['competences'] ?? [];
 <section id="page2" class="page page-competences">
     <div class="container">
         <div class="competences">
-            <h1>COMPETENCES</h1>
+            <h1>COMPÉTENCES</h1>
             <?php
                 // Génération des barres de progression pour les compétences
                 foreach ($competences as $competence) {

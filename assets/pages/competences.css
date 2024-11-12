@@ -1,5 +1,4 @@
-
-.page-competences{
+.page-competences {
     width: 100%;
     height: 100%;
     font-family: Arial, sans-serif;
@@ -8,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .container {
@@ -22,17 +22,17 @@
 /* Section des compétences */
 .competences {
     max-width: 466px;
+    flex: 1;
 }
 
 .competences h1 {
-    font-size: 6em;
+    font-size: 4em;
     margin-bottom: 20px;
 }
 
 /* Style de chaque compétence */
 .skill {
     margin-bottom: 15px;
-    
 }
 
 .skill-name {
@@ -57,9 +57,84 @@
 
 /* Section photo */
 .photo img {
-    width: 601px; /* Taille de la photo */
-    height: auto;
-    border-radius: 10px;
+    width: 80%;  /* L'image prend 80% de la largeur du conteneur */
+    max-width: 350px;  /* Limite la largeur de l'image */
+    display: block;  /* Utilisation de block pour un meilleur centrage */
+    margin: 0 auto;
 }
 
+/* Responsive pour petits écrans (moins de 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;  /* Les éléments s'empilent verticalement */
+        padding: 0 5vw;  /* Réduit l'espace de padding */
+        margin-top: 40px;  /* Ajoute un espacement au-dessus du container pour éviter que la barre de navigation chevauche */
+    }
 
+    .competences {
+        max-width: 90%;  /* Laisse plus d'espace pour la section compétences */
+        margin-bottom: 30px;  /* Ajoute un espacement sous les compétences */
+        margin-top: 100px; /* Décale les compétences plus bas pour éviter qu'elles ne soient cachées sous le nav */
+    }
+
+    .competences h1 {
+        font-size: 3em;  /* Réduit la taille du titre pour les petits écrans */
+        margin-bottom: 15px;  /* Réduit l'espacement sous le titre */
+    }
+
+    .skill-name {
+        font-size: 0.9em;  /* Réduit la taille des noms de compétences */
+    }
+
+    .photo {
+        width: 100%;  /* Le conteneur de l'image prend toute la largeur */
+        display: flex;  /* Utilisation du flexbox pour centrer le contenu */
+        justify-content: center;  /* Centre l'image horizontalement */
+    }
+
+    .photo img {
+        width: 80%;  /* La photo prend 80% de la largeur du conteneur */
+        height: auto;  /* Maintient les proportions de l'image */
+        max-width: 400px;  /* Limite la taille maximale de l'image */
+        display: block;  /* Utilisation de block pour un meilleur centrage */
+        margin: 0 auto;  /* Centrage horizontal de l'image */
+    }
+}
+
+/* Responsive pour écrans moyens (entre 769px et 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column;  /* Les éléments s'empilent verticalement */
+        padding: 0 5vw;  /* Réduit l'espace de padding */
+        margin-top: 40px;  /* Ajoute un espacement au-dessus du container pour éviter que la barre de navigation chevauche */
+    }
+
+    .competences {
+        max-width: 90%;  /* Laisse plus d'espace pour la section compétences */
+        margin-bottom: 30px;  /* Ajoute un espacement sous les compétences */
+        margin-top: 100px; /* Décale les compétences plus bas pour éviter qu'elles ne soient cachées sous le nav */
+    }
+
+    .competences h1 {
+        font-size: 3em;  /* Réduit la taille du titre pour les petits écrans */
+        margin-bottom: 15px;  /* Réduit l'espacement sous le titre */
+    }
+
+    .skill-name {
+        font-size: 0.9em;  /* Réduit la taille des noms de compétences */
+    }
+
+    .photo {
+        width: 100%;  /* Le conteneur de l'image prend toute la largeur */
+        display: flex;  /* Utilisation du flexbox pour centrer le contenu */
+        justify-content: center;  /* Centre l'image horizontalement */
+    }
+
+    .photo img {
+        width: 80%;  /* La photo prend 80% de la largeur du conteneur */
+        height: auto;  /* Maintient les proportions de l'image */
+        max-width: 400px;  /* Limite la taille maximale de l'image */
+        display: block;  /* Utilisation de block pour un meilleur centrage */
+        margin: 0 auto;  /* Centrage horizontal de l'image */
+    }
+}
