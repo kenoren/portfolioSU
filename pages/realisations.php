@@ -20,21 +20,21 @@ $realisations = $utilisateur['realisations'] ?? [];
 
 <section id="page3" class="page-realisations">
     <div class="container-realisations">
-      <!-- Circles positioned in the background -->
-      <div class="circleR circle-top-realisations"></div>
-      <div class="circleR circle-bottom-realisations"></div>
+        <div class="circleR circle-top-realisations"></div>
+        <div class="circleR circle-bottom-realisations"></div>
 
-      <!-- Title in bottom-right corner -->
-      <h1 class="realisations-title">RÉALISATIONS</h1>
+        <h1 class="realisations-title">RÉALISATIONS</h1>
 
-      <!-- Project images and captions -->
-      <div class="projects">
-        <?php foreach ($realisations as $realisation): ?>
-          <div class="project">
-            <img src="./assets/images/<?php echo htmlspecialchars($realisation['image']); ?>" alt="<?php echo htmlspecialchars($realisation['nom']); ?>">
-            <span><?php echo htmlspecialchars($realisation['nom']); ?></span>
-          </div>
-        <?php endforeach; ?>
-      </div>
+        <div class="projects">
+            <?php foreach ($realisations as $realisation): ?>
+                <div class="project">
+                    <a href="./assets/documents/<?php echo htmlspecialchars($realisation['document']); ?>" target="_blank">
+                        <img src="./assets/images/<?php echo htmlspecialchars($realisation['illustration']); ?>" alt="<?php echo htmlspecialchars($realisation['titre']); ?>">
+                    </a>
+                    <h2><?php echo htmlspecialchars($realisation['titre']); ?></h2>
+                    <p><?php echo htmlspecialchars($realisation['description']); ?></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>

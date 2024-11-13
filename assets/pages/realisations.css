@@ -24,6 +24,7 @@
 .project {
   width: 25vw; /* Largeur des projets */
   margin-bottom: 20px; /* Espacement entre les projets */
+  text-align: center; /* Centrer le texte et l'image */
 }
 
 .project img {
@@ -31,14 +32,26 @@
   height: auto;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Montre que l'image est cliquable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation pour le survol */
 }
 
-.project span {
-  display: block;
+.project img:hover {
+  transform: scale(1.05); /* Légère augmentation de la taille au survol */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre renforcée au survol */
+}
+
+.project h2 {
   margin-top: 10px;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
   color: #333;
+}
+
+.project p {
+  font-size: 1em;
+  color: #555;
+  margin-top: 5px;
 }
 
 /* Title Styling */
@@ -54,25 +67,25 @@
 /* Cercles décoratifs */
 .circleR {
   position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-    opacity: 0.3;
-    border: 2px solid #666;
-    animation: fadeInUp 2s ease-out forwards;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.3;
+  border: 2px solid #666;
+  animation: fadeInUp 2s ease-out forwards;
 }
 
 .circle-top-realisations {
   top: -20vh;
-    left: -15vw;
-    width: 50vw;
-    height: 50vw;
+  left: -15vw;
+  width: 50vw;
+  height: 50vw;
 }
 
 .circle-bottom-realisations {
   bottom: -20vh;
-    right: -15vw;
-    width: 50vw;
-    height: 50vw;
+  right: -15vw;
+  width: 50vw;
+  height: 50vw;
 }
 
 @media (max-width: 768px) {
@@ -86,6 +99,10 @@
     width: 50%;
     max-width: 400px;
     margin-bottom: 20px;
+  }
+
+  .project p {
+    display: none; /* Masque la description sur petits écrans */
   }
 
   .realisations-title {
@@ -119,6 +136,10 @@
     width: 60%;
     max-width: 400px;
     margin-bottom: 20px;
+  }
+
+  .project p {
+    display: none; /* Masque la description sur petits écrans */
   }
 
   .realisations-title {

@@ -33,19 +33,71 @@ utilisateur:
           niveau: 20
 
   realisations:
-    - nom: "Projet1"
-      image: "projet1.png"
-    - nom: "Projet2"
-      image: "projet2.png"
-    - nom: "Projet3"
-      image: "projet3.png"
-
+    - titre: "Portfolio ZhongLin"
+      description: "Ce projet est une maquette Figma d’un portfolio fictif pour un photographe malaisien, créée dans le cadre d’un entraînement aux technologies Next.js et TailwindCSS."
+      illustration: "projet1.png"
+      document: "projet1_document.pdf"
+    - titre: "Maquette Arcane"
+      description: "Il s’agit d’une maquette Figma inspirée par la série Arcane de Netflix, qui explore l’univers visuel de League of Legends."
+      illustration: "projet2.png"
+      document: "projet2_document.pdf"
+    - titre: "Maquette Animation"
+      description: "J’ai conçu une maquette Figma d’un portfolio, avec l’intention d’y intégrer des animations complexes en CSS, JavaScript et plus précisément en Three.js."
+      illustration: "projet3.png"
+      document: "projet3_document.pdf"
+    
   formations:
+    - nom: "Bac STMG Option SIG"
+      etablissement: "Lycée Jean Rostand"
+      logo: "logoRostand.png"
+      date_debut: "2014-09-01"
+      date_fin: "2016-06-30"
+      lieu: "Caen, France"
+      contenu: |
+        Formation en Sciences et Technologies du Management et de la Gestion (STMG) avec une spécialisation en Systèmes d'Information de Gestion (SIG). Ce programme permet d'acquérir des compétences dans la gestion de projets informatiques, l'analyse des besoins des entreprises et la mise en place de solutions informatiques adaptées.
+
     - nom: "Licence Informatique"
       etablissement: "Université de Caen"
-      date_debut: ""
-      date_fin: ""
-    - nom: "BTS SIO"
+      logo: "logoUnicaen.png"
+      date_debut: "2018-09-01"
+      date_fin: "2021-06-30"
+      lieu: "Caen, France"
+      contenu: |
+        Formation en informatique couvrant les bases du développement logiciel, de la gestion de base de données, du réseau et des systèmes d'exploitation. Les cours incluent des langages de programmation comme Java, C++, ainsi que des notions avancées de développement web.
+    
+    - nom: "BTS Services Informatiques aux Organisations"
       etablissement: "CaenSup Saint-Ursule"
-      date_debut: ""
-      date_fin: ""
+      logo: "logoCaensup.jpeg"
+      date_debut: "2016-09-01"
+      date_fin: "2018-06-30"
+      lieu: "Caen, France"
+      contenu: |
+        Formation axée sur l'administration des réseaux et des systèmes, ainsi que sur le développement d'applications informatiques. Le programme couvre également la gestion de projets informatiques et la mise en place de solutions d'infrastructure pour les entreprises.
+
+  cv_pdf: "CV.pdf"
+
+  contact:
+    formulaire:
+      champs:
+        - nom: "Nom de l’expéditeur"
+          type: "text"
+          obligatoire: true
+        - nom: "Adresse de courriel de l’expéditeur"
+          type: "email"
+          obligatoire: true
+        - nom: "Objet du message"
+          type: "text"
+          obligatoire: true
+        - nom: "Contenu du message"
+          type: "textarea"
+          obligatoire: true
+        - nom: "Captcha"
+          type: "captcha"
+          obligatoire: true
+      message_confirmation: "Votre message a été envoyé avec succès."
+      
+    envoi_email:
+      adresse_destinataire: "votre_adresse@example.com"
+      sujet_par_defaut: "Nouveau message du formulaire de contact"
+      message_reception: "Vous avez reçu un nouveau message du formulaire de contact."
+
