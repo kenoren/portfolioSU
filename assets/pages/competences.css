@@ -57,8 +57,8 @@
 
 /* Section photo */
 .photo img {
-    width: 80%;  /* L'image prend 80% de la largeur du conteneur */
-    max-width: 350px;  /* Limite la largeur de l'image */
+    width: 90%;  /* L'image prend 80% de la largeur du conteneur */
+    max-width: 500px;  /* Limite la largeur de l'image */
     display: block;  /* Utilisation de block pour un meilleur centrage */
     margin: 0 auto;
 }
@@ -87,22 +87,24 @@
     }
 
     .photo {
-        width: 100%;  /* Le conteneur de l'image prend toute la largeur */
-        display: flex;  /* Utilisation du flexbox pour centrer le contenu */
-        justify-content: center;  /* Centre l'image horizontalement */
+        /*width: 100%;  
+        display: flex;  
+        justify-content: center;  */
+        display: none;
     }
 
     .photo img {
-        width: 80%;  /* La photo prend 80% de la largeur du conteneur */
-        height: auto;  /* Maintient les proportions de l'image */
-        max-width: 400px;  /* Limite la taille maximale de l'image */
-        display: block;  /* Utilisation de block pour un meilleur centrage */
-        margin: 0 auto;  /* Centrage horizontal de l'image */
+       /* width: 80%;  
+        height: auto; 
+        max-width: 400px;  
+        display: block;  
+        margin: 0 auto; */
+        display: none;
     }
 }
 
 /* Responsive pour écrans moyens (entre 769px et 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1300px) {
     .container {
         flex-direction: column;  /* Les éléments s'empilent verticalement */
         padding: 0 5vw;  /* Réduit l'espace de padding */
@@ -125,16 +127,18 @@
     }
 
     .photo {
-        width: 100%;  /* Le conteneur de l'image prend toute la largeur */
-        display: flex;  /* Utilisation du flexbox pour centrer le contenu */
-        justify-content: center;  /* Centre l'image horizontalement */
+        /*width: 100%;  
+        display: flex;  
+        justify-content: center;  */
+        display: none;
     }
 
     .photo img {
-        width: 80%;  /* La photo prend 80% de la largeur du conteneur */
-        height: auto;  /* Maintient les proportions de l'image */
-        max-width: 400px;  /* Limite la taille maximale de l'image */
-        display: block;  /* Utilisation de block pour un meilleur centrage */
-        margin: 0 auto;  /* Centrage horizontal de l'image */
+       /* width: 80%;  
+        height: auto; 
+        max-width: 400px;  
+        display: block;  
+        margin: 0 auto; */
+        display: none;
     }
 }

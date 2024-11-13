@@ -22,14 +22,21 @@ $competences = $utilisateur['competences'] ?? [];
             <h1>COMPÉTENCES</h1>
             <?php
                 // Génération des barres de progression pour les compétences
-                foreach ($competences as $competence) {
-                    $comp = htmlspecialchars($competence['nom']);
-                    $niveau = (int)$competence['niveau']; // S'assurer que le niveau est un entier
+                foreach ($competences as $competence_domaine) {
+                    // Afficher le domaine de compétence
+                    $domaine = htmlspecialchars($competence_domaine['domaine']);
+                    echo "<h2>$domaine</h2>";
 
-                    echo "<div class='skill'>";
-                    echo "<span class='skill-name'>$comp</span>";
-                    echo "<div class='progress-bar'><div class='progress' style='width: $niveau%;'></div></div>";
-                    echo "</div>";
+                    // Parcourir les compétences dans ce domaine
+                    foreach ($competence_domaine['competences'] as $comp) {
+                        $compName = htmlspecialchars($comp['nom']);
+                        $niveau = (int)$comp['niveau']; // S'assurer que le niveau est un entier
+
+                        echo "<div class='skill'>";
+                        echo "<span class='skill-name'>$compName</span>";
+                        echo "<div class='progress-bar'><div class='progress' style='width: $niveau%;'></div></div>";
+                        echo "</div>";
+                    }
                 }
             ?>
         </div>
@@ -38,4 +45,3 @@ $competences = $utilisateur['competences'] ?? [];
         </div>
     </div>
 </section>
-

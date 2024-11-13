@@ -5,16 +5,32 @@ utilisateur:
   image: "./assets/images/moi.png"
   
   competences:
-    - nom: "Développement (HTML,CSS,JS,PHP)"
-      niveau: 80
-    - nom: "Bureautique (Excel,Words)"
-      niveau: 70
-    - nom: "Réseau (Adresse IP, Analyse de trames)"
-      niveau: 60
-    - nom: "Langues (Français,Anglais,Espagnol)"
-      niveau: 50
-    - nom: "UI (Figma)"
-      niveau: 70
+    - domaine: "Développement"
+      competences:
+        - nom: "HTML"
+          niveau: 80
+        - nom: "CSS"
+          niveau: 70
+        - nom: "PHP"
+          niveau: 50
+        - nom: "JS"
+          niveau: 60
+    - domaine: "Bureautique"
+      competences:
+        - nom: "Excel"
+          niveau: 90
+    - domaine: "Réseau"
+      competences:
+        - nom: "Adresse IP"
+          niveau: 60
+        - nom: "Analyse de trames"
+          niveau: 50
+    - domaine: "UI"
+      competences:
+        - nom: "Figma"
+          niveau: 70
+        - nom: "Blender"
+          niveau: 20
 
   realisations:
     - nom: "Projet1"
@@ -24,7 +40,6 @@ utilisateur:
     - nom: "Projet3"
       image: "projet3.png"
 
-  
   formations:
     - nom: "Licence Informatique"
       etablissement: "Université de Caen"
@@ -34,5 +49,3 @@ utilisateur:
       etablissement: "CaenSup Saint-Ursule"
       date_debut: ""
       date_fin: ""
-
-    
