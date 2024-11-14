@@ -68,7 +68,7 @@
 .circleR {
   position: absolute;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
   opacity: 0.3;
   border: 2px solid #666;
   animation: fadeInUp 2s ease-out forwards;

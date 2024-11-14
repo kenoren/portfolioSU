@@ -50,8 +50,8 @@ utilisateur:
     - nom: "Bac STMG Option SIG"
       etablissement: "Lycée Jean Rostand"
       logo: "logoRostand.png"
-      date_debut: "2014-09-01"
-      date_fin: "2016-06-30"
+      date_debut: "2016-09-01"
+      date_fin: "2020-06-30"
       lieu: "Caen, France"
       contenu: |
         Formation en Sciences et Technologies du Management et de la Gestion (STMG) avec une spécialisation en Systèmes d'Information de Gestion (SIG). Ce programme permet d'acquérir des compétences dans la gestion de projets informatiques, l'analyse des besoins des entreprises et la mise en place de solutions informatiques adaptées.
@@ -59,8 +59,8 @@ utilisateur:
     - nom: "Licence Informatique"
       etablissement: "Université de Caen"
       logo: "logoUnicaen.png"
-      date_debut: "2018-09-01"
-      date_fin: "2021-06-30"
+      date_debut: "2020-09-01"
+      date_fin: "2024-06-30"
       lieu: "Caen, France"
       contenu: |
         Formation en informatique couvrant les bases du développement logiciel, de la gestion de base de données, du réseau et des systèmes d'exploitation. Les cours incluent des langages de programmation comme Java, C++, ainsi que des notions avancées de développement web.
@@ -68,8 +68,8 @@ utilisateur:
     - nom: "BTS Services Informatiques aux Organisations"
       etablissement: "CaenSup Saint-Ursule"
       logo: "logoCaensup.jpeg"
-      date_debut: "2016-09-01"
-      date_fin: "2018-06-30"
+      date_debut: "2024-09-01"
+      date_fin: "2026-06-30"
       lieu: "Caen, France"
       contenu: |
         Formation axée sur l'administration des réseaux et des systèmes, ainsi que sur le développement d'applications informatiques. Le programme couvre également la gestion de projets informatiques et la mise en place de solutions d'infrastructure pour les entreprises.
@@ -97,7 +97,7 @@ utilisateur:
       message_confirmation: "Votre message a été envoyé avec succès."
       
     envoi_email:
-      adresse_destinataire: "votre_adresse@example.com"
+      adresse_destinataire: "mathisfou@gmail.com"
       sujet_par_defaut: "Nouveau message du formulaire de contact"
       message_reception: "Vous avez reçu un nouveau message du formulaire de contact."
 

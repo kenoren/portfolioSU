@@ -57,6 +57,10 @@ body {
     font-size: 1.2rem;
 }
 
+.navbar nav a:hover{
+    color: #FF5722;
+}
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -113,14 +117,15 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-top: 20px;
-    animation: fadeInUp 2s ease-out forwards;
+    animation: fadeIn 2s ease-out forwards;
+
 }
 
 .circle {
     position: absolute;
     border-radius: 50%;
-    z-index: 1;
-    opacity: 0.3;
+    z-index: 0;
+    /*opacity: 0.3;*/
     border: 2px solid #666;
     animation: fadeInUp 2s ease-out forwards;
 }
@@ -325,5 +330,6 @@ body {
 
     .hamburger {
         display: flex;
+        
     }
 }
