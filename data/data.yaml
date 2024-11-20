@@ -79,16 +79,16 @@ utilisateur:
   contact:
     formulaire:
       champs:
-        - nom: "Nom de l’expéditeur"
+        - nom: "Nom"
           type: "text"
           obligatoire: true
-        - nom: "Adresse de courriel de l’expéditeur"
+        - nom: "Email"
           type: "email"
           obligatoire: true
-        - nom: "Objet du message"
+        - nom: "Objet"
           type: "text"
           obligatoire: true
-        - nom: "Contenu du message"
+        - nom: "Message"
           type: "textarea"
           obligatoire: true
         - nom: "Captcha"
