@@ -32,45 +32,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['Email'] ?? '';
     $objet = $_POST['Objet'] ?? $sujet_defaut;
     $message = $_POST['Message'] ?? '';
-    $captcha = $_POST['Captcha'] ?? '';
+    $captchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
-  
+    // Si reCAPTCHA est vide (signifiant que l'utilisateur n'a pas coché la case)
+    if (empty($captchaResponse)) {
+        echo "<p class='error'>Veuillez vérifier que vous n'êtes pas un robot.</p>";
+    } else {
+        // Vérifier la réponse reCAPTCHA avec l'API Google
+        $secretKey = '6Ld68YUqAAAAACb4Jy0Zryprw0Y9WMvtHw6TdM9k';  // Remplacez par votre vraie clé secrète
+        $remoteIp = $_SERVER['REMOTE_ADDR'];
 
-    // Validation simple du captcha
-   //if ($captcha === '5') {  // Exemple de vérification
-        // Configuration de PHPMailer
-        $mail = new PHPMailer(true);
+        // Créer une requête pour valider la réponse
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = [
+            'secret' => $secretKey,
+            'response' => $captchaResponse,
+            'remoteip' => $remoteIp
+        ];
 
-        try {
-            // Paramètres SMTP pour Gmail
-            $mail->isSMTP();  // Utiliser SMTP
-            $mail->Host = 'smtp.gmail.com';  // Serveur SMTP de Gmail
-            $mail->SMTPAuth = true;  // Activer l'authentification SMTP
-            $mail->Username = 'mathisfou@gmail.com';  // Votre email Gmail
-            $mail->Password = 'Footbalesth3';  // Mot de passe ou mot de passe d'application (si 2FA activé)
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // Utiliser STARTTLS
-            $mail->Port = 587;  // Port pour STARTTLS
+        // Effectuer la requête HTTP POST
+        $options = [
+            'http' => [
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n"
+            ]
+        ];
+        $context  = stream_context_create($options);
+        $response = file_get_contents($url, false, $context);
+        $responseKeys = json_decode($response, true);
 
-            // Destinataire
-            $mail->setFrom($email, $nom);  // De l'adresse email du formulaire
-        
-            $mail->addAddress($email_destinataire);  // À l'adresse email de destination
+        // Vérifier si reCAPTCHA a réussi
+        if (intval($responseKeys["success"]) !== 1) {
+            echo "<p class='error'>Vérification reCAPTCHA échouée. Veuillez réessayer.</p>";
+        } else {
+            // Si la vérification réussit, envoyer l'email
+            $mail = new PHPMailer(true);
+            try {
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'mathisfou@gmail.com';
+                $mail->Password = 'stut njgr fhgh uwww';
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
 
-            // Contenu de l'email
-            $mail->isHTML(true);  // Email au format HTML
-            $mail->Subject = $objet;
-            $mail->Body    = "Nom: $nom\nEmail: $email\nObjet: $objet\n\nMessage:\n$message";
+                $mail->setFrom($email, $nom);
+                $mail->addAddress($email_destinataire);
+                $mail->isHTML(true);
+                $mail->Subject = $objet;
+                $mail->Body    = "Nom: $nom\nEmail: $email\nObjet: $objet\n\nMessage:\n$message";
 
-            // Envoi de l'email
-            $mail->send();
-            echo "<p class='confirmation'>$confirmation_message</p>";  // Message de confirmation
-        } catch (Exception $e) {
-            echo "Le message n'a pas pu être envoyé. Erreur : {$mail->ErrorInfo}";  // Erreur d'envoi
+                $mail->send();
+                echo "<p class='confirmation'>$confirmation_message</p>";
+            } catch (Exception $e) {
+                echo "Le message n'a pas pu être envoyé. Erreur : {$mail->ErrorInfo}";
+            }
         }
-   /* } else {
-        echo "<p class='error'>Captcha incorrect. Veuillez réessayer.</p>";  // Erreur de captcha
-    }*/
+    }
 }
+
 ?>
 
 
@@ -95,17 +116,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <textarea id="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
                                   name="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
                                   required="<?php echo $champ['obligatoire'] ? 'required' : ''; ?>"></textarea>
-                    <?php elseif ($champ['type'] === 'captcha'): ?>
-                        <input type="text" 
-                               id="captcha" 
-                               name="captcha" 
-                               required="required" 
-                               placeholder="Combien font 2 + 3 ?">
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
+
+            <!-- reCAPTCHA widget -->
+            <div class="g-recaptcha" data-sitekey="6Ld68YUqAAAAADx11yUJmzZUHgtQ3QyVozazUuPQ"></div>
 
             <button type="submit" class="submit-button">Envoyer</button>
         </form>
     </div>
 </section>
+
+<!-- Charger le script reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
