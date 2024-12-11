@@ -98,3 +98,64 @@
 .submit-button:hover {
     background-color: #ff7849;
 }
+
+/* Style spécifique pour la section RGPD */
+.form-group.rgpd {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #FF5722;
+    border-radius: 6px;
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+    gap: 15px; /* Espacement entre la case et le texte */
+}
+
+.form-group.rgpd input[type="checkbox"] {
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    transform: none; /* Pas de transformation */
+    cursor: pointer;
+    accent-color: #FF5722; /* Couleur personnalisée pour la case */
+}
+
+.form-group.rgpd label {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 1; /* Le texte occupe le reste de l'espace */
+}
+
+.form-group.rgpd label:hover {
+    text-decoration: underline;
+}
+
+/* Ajouter un espacement supplémentaire pour le formulaire */
+.contact-form {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.confirmation {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error {
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}

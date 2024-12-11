@@ -5,7 +5,7 @@ use Symfony\Component\Yaml\Yaml;
 
 // Charger le contenu du fichier YAML
 try {
-    $contenu = Yaml::parseFile('data/data.yaml');
+    $contenu = Yaml::parseFile('data/realisations.yaml');
 } catch (Exception $e) {
     echo 'Erreur lors du chargement du fichier YAML: ',  $e->getMessage();
     exit;

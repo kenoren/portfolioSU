@@ -1,0 +1,14 @@
+utilisateur:
+  realisations:
+    - titre: "Portfolio ZhongLin"
+      description: "Ce projet est une maquette Figma d’un portfolio fictif pour un photographe malaisien, créée dans le cadre d’un entraînement aux technologies Next.js et TailwindCSS."
+      illustration: "projet1.png"
+      document: "projet1_document.pdf"
+    - titre: "Maquette Arcane"
+      description: "Il s’agit d’une maquette Figma inspirée par la série Arcane de Netflix, qui explore l’univers visuel de League of Legends."
+      illustration: "projet2.png"
+      document: "projet2_document.pdf"
+    - titre: "Maquette Animation"
+      description: "J’ai conçu une maquette Figma d’un portfolio, avec l’intention d’y intégrer des animations complexes en CSS, JavaScript et plus précisément en Three.js."
+      illustration: "projet3.png"
+      document: "projet3_document.pdf"
