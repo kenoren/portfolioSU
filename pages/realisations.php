@@ -28,7 +28,7 @@ $realisations = $utilisateur['realisations'] ?? [];
         <div class="projects">
             <?php foreach ($realisations as $realisation): ?>
                 <div class="project">
-                    <a href="./assets/documents/<?php echo htmlspecialchars($realisation['document']); ?>" target="_blank">
+                    <a href="./assets/document/<?php echo htmlspecialchars($realisation['document']); ?>" target="_blank">
                         <img src="./assets/images/<?php echo htmlspecialchars($realisation['illustration']); ?>" alt="<?php echo htmlspecialchars($realisation['titre']); ?>">
                     </a>
                     <h2><?php echo htmlspecialchars($realisation['titre']); ?></h2>

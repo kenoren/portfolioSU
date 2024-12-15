@@ -159,3 +159,98 @@
     font-weight: bold;
     text-align: center;
 }
+
+/* Media Query pour les écrans de largeur maximale 768px */
+@media (max-width: 768px) {
+    .container-contact {
+        max-width: 90%; /* Réduit la largeur pour les petits écrans */
+        padding: 20px; /* Ajuste les marges internes */
+    }
+
+    .contact-title {
+        font-size: 1.8em; /* Réduit la taille du titre */
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 1em; /* Réduit la taille du label */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9em; /* Réduit la taille des champs */
+        padding: 8px; /* Réduit le padding interne */
+    }
+
+    .submit-button {
+        font-size: 1em; /* Réduit la taille du texte */
+        padding: 10px; /* Ajuste le padding */
+    }
+
+    .form-group.rgpd {
+        flex-direction: column; /* Réorganise le texte et la case à cocher */
+        gap: 10px; /* Réduit l'espacement */
+        padding: 10px;
+    }
+
+    .circle-top-contact {
+        width: 40vw; /* Augmente légèrement la taille des cercles */
+        height: 40vw;
+        top: -10vh;
+        left: -10vw;
+    }
+
+    .circle-bottom-contact {
+        width: 35vw;
+        height: 35vw;
+        bottom: -10vh;
+        right: -10vw;
+    }
+}
+
+/* Media Query pour les écrans entre 769px et 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-contact {
+        max-width: 80%; /* Augmente légèrement la largeur */
+        padding: 30px; /* Ajuste les marges internes */
+    }
+
+    .contact-title {
+        font-size: 2em; /* Taille intermédiaire du titre */
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-size: 1.05em; /* Taille intermédiaire des labels */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1em; /* Taille standard */
+        padding: 10px; /* Padding légèrement réduit */
+    }
+
+    .submit-button {
+        font-size: 1.1em; /* Taille intermédiaire du bouton */
+        padding: 12px; /* Ajustement du padding */
+    }
+
+    .form-group.rgpd {
+        gap: 12px; /* Espacement réduit */
+        padding: 12px;
+    }
+
+    .circle-top-contact {
+        width: 35vw;
+        height: 35vw;
+        top: -8vh;
+        left: -8vw;
+    }
+
+    .circle-bottom-contact {
+        width: 30vw;
+        height: 30vw;
+        bottom: -8vh;
+        right: -8vw;
+    }
+}

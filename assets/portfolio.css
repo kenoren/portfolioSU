@@ -271,6 +271,11 @@ body {
     .hamburger {
         display: flex;
     }
+
+    .presentation {
+        font-size: 1rem; /* Réduction de la taille du texte */
+        width: 90%; /* Largeur relative augmentée */
+    }
 }
 
 /* Responsive pour écrans moyens */
@@ -331,5 +336,41 @@ body {
     .hamburger {
         display: flex;
         
+    }
+    .presentation {
+        font-size: 1.1rem; /* Taille intermédiaire */
+    }
+}
+
+
+.presentation {
+    font-size: 1.2rem; /* Taille du texte */
+    line-height: 1.6; /* Espacement entre les lignes */
+    color: #555; /* Couleur du texte pour un bon contraste */
+    margin: 2rem auto; /* Espacement autour de l'élément */
+    width: 80%; /* Largeur relative pour un alignement centré */
+    max-width: 800px; /* Largeur maximale pour les grands écrans */
+    text-align: justify; /* Texte justifié pour une meilleure lisibilité */
+    background-color: #f9f9f9; /* Fond légèrement contrasté */
+    padding: 1.5rem; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre subtil */
+}
+
+/* Animation pour l'apparition de la description */
+.presentation {
+    opacity: 0; /* Cache initialement */
+    transform: translateY(20px); /* Position initiale */
+    animation: fadeInUp 1.5s ease-out forwards; /* Animation d'apparition */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -74,6 +74,11 @@ $realisations = $utilisateur['realisations'] ?? [];
         <div class="hero-image">
             <img src="<?php echo htmlspecialchars($utilisateur['image']); ?>" alt="<?php echo htmlspecialchars($utilisateur['prenom'] . ' ' . $utilisateur['nom']); ?>">
         </div>
+
+        <p class="presentation">
+            <?php echo htmlspecialchars($utilisateur['description']); ?>
+        </p>
+
     </section>
 </section>
 <?php include("./pages/competences.php")?>
