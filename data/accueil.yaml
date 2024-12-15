@@ -1,0 +1,6 @@
+utilisateur:
+  prenom: "Mathis"
+  nom: "FOUREY"
+  sous_titre: "Développeur & UX/UI"
+  image: "./assets/images/moi.png"
+  description: "Je m'appelle Mathis, j'ai 23 ans et je suis actuellement en première année de BTS SIO. Passionné par le développement web et les technologies numériques, je m'intéresse particulièrement à la conception UX/UI et à la création de solutions digitales innovantes."

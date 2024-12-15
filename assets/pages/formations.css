@@ -1,0 +1,170 @@
+/* Section principale Formations */
+.page-formations {
+    background-color: #fff; /* Fond légèrement gris pour adoucir */
+    color: #333;
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Titre des formations */
+.formations-title {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 70px;
+    color: #333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Grille des formations */
+.formations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes responsives */
+    gap: 40px;
+    justify-items: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+/* Cercles décoratifs (page Formations) */
+.circleF {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.3;
+    border: 2px solid #666;
+    animation: fadeInUp 2s ease-out forwards;
+  }
+  
+  .circle-top-formations {
+    top: -60vh;
+    left: -15vw;
+    width: 50vw;
+    height: 50vw;
+  }
+  
+  .circle-bottom-formations {
+    bottom: -60vh;
+    right: -15vw;
+    width: 50vw;
+    height: 50vw;
+  }
+
+/* Élément individuel de formation */
+.formation-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    max-width: 320px;
+    position: relative;
+}
+
+/*.formation-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}*/
+
+/* Icône de la formation */
+.formation-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.formation-icon:hover {
+    filter: grayscale(0%);
+}
+
+/* Nom de l'école */
+.formation-ecole {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+/* Diplôme de la formation */
+.formation-diplome {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Dates de la formation */
+.formation-dates {
+    font-size: 1em;
+    color: #777;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Lieu de la formation */
+.formation-lieu {
+    font-size: 1em;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Contenu de la formation */
+.formation-contenu {
+    font-size: 0.95em;
+    color: #555;
+    margin-top: 15px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Bouton de téléchargement du CV */
+.cv-link {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cv-button {
+    padding: 12px 25px;
+    background-color: #FF5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #ff4a26;
+}
+
+.cv-button:active {
+    background-color: #ff4a26;
+}
+
+/* Animation des cercles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+}

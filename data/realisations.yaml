@@ -1,0 +1,14 @@
+utilisateur:
+  realisations:
+    - titre: "Site La Firme"
+      description: "Ce projet consistait en la création d'un site web en HTML et CSS, conçu spécifiquement pour maîtriser les techniques de media queries et de responsive design."
+      illustration: "projet1.png"
+      document: "LaFirme.pdf"
+    - titre: "Site Web Arena"
+      description: "Ce projet impliquait la réalisation d'un site web en HTML et CSS, avec un accent particulier sur le positionnement des éléments et l'utilisation des Flexbox."
+      illustration: "projet2.png"
+      document: "WebArena.pdf"
+    - titre: "Formulaire de connexion"
+      description: "Ce projet portait sur la création d'un formulaire de connexion en HTML, CSS, JavaScript et PHP. Le formulaire intègre une gestion avancée des erreurs, une vérification de la robustesse des mots de passe, et une récupération sécurisée des données utilisateur."
+      illustration: "projet3.png"
+      document: "FormulaireDeConnexion.pdf"

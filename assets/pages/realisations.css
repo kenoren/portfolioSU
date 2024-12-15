@@ -1,72 +1,163 @@
 .page-realisations {
-    background-color: #D9DCDF;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden; /* Hides overflow from positioned circles */
-  }
+  background-color: #D9DCDF;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden; /* Cache le débordement des cercles positionnés */
+}
 
-  /* Container for projects */
-  .projects {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    position: relative;
-    z-index: 1;
-  }
+/* Container for projects */
+.projects {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap; /* Permet aux projets de passer à la ligne si nécessaire */
+}
 
-  /* Individual project settings */
-  .project {
-    width: 400px; /* Width as per the design */
-    
-  }
+/* Individual project settings */
+.project {
+  width: 25vw; /* Largeur des projets */
+  margin-bottom: 20px; /* Espacement entre les projets */
+  text-align: center; /* Centrer le texte et l'image */
+}
 
-  .project img {
-    width: 400px;
-    height: 280px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.project img {
+  width: 100%; /* Assure que l'image prend toute la largeur de son conteneur */
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Montre que l'image est cliquable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation pour le survol */
+}
 
-  .project span {
-    display: block;
-    margin-top: 10px;
-    font-size: 1em;
-    font-style: bold;
-    color: #333;
-  }
+.project img:hover {
+  transform: scale(1.05); /* Légère augmentation de la taille au survol */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre renforcée au survol */
+}
 
-  /* Title Styling */
-  .realisations-title {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 6em;
-    color: #333;
-    z-index: 2;
-  }
+.project h2 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
 
-  .circleR {
-    position: absolute;
-    border: 2px solid black;
-    border-radius: 50%;
-    z-index: 0;
-  }
+.project p {
+  font-size: 1em;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Title Styling */
+.realisations-title {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 6em;
+  color: #333;
+  z-index: 2;
+}
+
+/* Cercles décoratifs */
+.circleR {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.3;
+  border: 2px solid #666;
+  animation: fadeInUp 2s ease-out forwards;
+}
 
 .circle-top-realisations {
-    top: -20%;
-    left: -5%;
-    width: 35vw;
-    height: 30vw;
+  top: -20vh;
+  left: -15vw;
+  width: 50vw;
+  height: 50vw;
 }
 
 .circle-bottom-realisations {
-    bottom: -20%;
-    right: -5%;
-    width: 35vw;
-    height: 30vw;
+  bottom: -20vh;
+  right: -15vw;
+  width: 50vw;
+  height: 50vw;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  .project {
+    width: 50%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .project p {
+    display: none; /* Masque la description sur petits écrans */
+  }
+
+  .realisations-title {
+    font-size: 3em; /* Taille plus petite sur petits écrans */
+    padding-top: 15vh;
+  }
+
+  .circle-top-realisations {
+    top: -10vh;
+    left: -20vw;
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .circle-bottom-realisations {
+    bottom: -10vh;
+    right: -20vw;
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  .project {
+    width: 60%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .project p {
+    display: none; /* Masque la description sur petits écrans */
+  }
+
+  .realisations-title {
+    font-size: 3em; /* Taille plus petite pour tablettes */
+    padding-top: 20vh;
+  }
+
+  .circle-top-realisations {
+    top: -10vh;
+    left: -20vw;
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .circle-bottom-realisations {
+    bottom: -10vh;
+    right: -20vw;
+    width: 60vw;
+    height: 60vw;
+  }
 }
