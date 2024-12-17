@@ -7,6 +7,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
    
 }
 
@@ -62,6 +65,30 @@
     display: block;  /* Utilisation de block pour un meilleur centrage */
     margin: 0 auto;
 }
+
+.circleComp {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.3;
+    border: 2px solid #fff;
+  
+  }
+  
+  .circle-top-realisations-competences {
+    top: -20vh;
+    left: -15vw;
+    width: 50vw;
+    height: 50vw;
+  }
+  
+  .circle-bottom-realisations-competences {
+    bottom: -20vh;
+    right: -15vw;
+    width: 50vw;
+    height: 50vw;
+  }
+  
 
 /* Responsive pour petits écrans (moins de 768px) */
 @media (max-width: 768px) {

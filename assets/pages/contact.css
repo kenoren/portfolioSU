@@ -3,60 +3,65 @@
     background-color: #000;
     color: #FFFFFF;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;  /* Centrage vertical du contenu */
     min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-/* Conteneur central pour aligner et centrer le contenu */
+/* Conteneur pour gérer la disposition des éléments en deux colonnes */
 .container-contact {
-    position: relative;
-    max-width: 600px;
-    margin: auto;
-    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Centrage vertical */
+    width: 100%;
+    max-width: 900px; /* Limite la largeur du conteneur */
     background-color: #121212;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
 }
 
-/* Cercles décoratifs */
-.circleC {
-    position: absolute;
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0.2;
-    background-color: #FF5722;
+/* Section gauche - "Contactez-moi" */
+.contact-left {
+    flex: 1; /* La colonne de gauche prend une portion de la largeur */
+    margin-right: 15px;
+    text-align: left;
 }
 
-.circle-top-contact {
-    top: -5vh;
-    left: -5vw;
-    width: 30vw;
-    height: 30vw;
-}
-
-.circle-bottom-contact {
-    bottom: -5vh;
-    right: -5vw;
-    width: 25vw;
-    height: 25vw;
-}
-
-/* Titre du formulaire */
 .contact-title {
-    text-align: center;
-    font-size: 2.5em;
+    font-size: 1.8em; /* Taille réduite pour le titre */
     color: #FF5722;
-    margin-bottom: 20px;
+    margin: 0; /* Enlever les marges pour que le titre soit bien centré */
+    text-align: center;  /* Centrer horizontalement le titre */
 }
 
-/* Style des champs */
+/* Section droite - Formulaire */
+.contact-right {
+    flex: 1; /* Réduire la largeur de la colonne de formulaire */
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Réduit l'espacement entre les champs */
+    max-width: 450px; /* Réduit la largeur du formulaire */
+    margin: 0 auto; /* Centrer le formulaire */
+    z-index: 2;
+}
+
+/* Style des champs du formulaire */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Réduit l'espace entre les champs */
 }
 
 .form-group label {
-    font-size: 1.1em;
+    font-size: 0.95em; /* Réduire la taille de la police des labels */
     color: #FFFFFF;
     margin-bottom: 5px;
 }
@@ -64,33 +69,28 @@
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 8px;  /* Réduire le padding interne des champs */
     border-radius: 4px;
     border: none;
     background-color: #333;
     color: #FFFFFF;
-    font-size: 1em;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #999;
+    font-size: 0.9em; /* Réduire la taille des champs de saisie */
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 60px; /* Réduire la hauteur des zones de texte */
 }
 
 /* Bouton de soumission */
 .submit-button {
     width: 100%;
-    padding: 12px;
+    padding: 8px;  /* Réduit le padding du bouton */
     background-color: #FF5722;
     color: #FFFFFF;
     border: none;
     border-radius: 4px;
-    font-size: 1.2em;
+    font-size: 1em; /* Réduire la taille du texte du bouton */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -103,27 +103,25 @@
 .form-group.rgpd {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #FF5722;
+    border: 2px solid #FF5722; /* Bordure orange autour de la case et du texte */
     border-radius: 6px;
     background-color: #1a1a1a;
     color: #FFFFFF;
-    gap: 15px; /* Espacement entre la case et le texte */
+    gap: 10px; /* Espacement entre la case à cocher et le texte */
 }
 
 .form-group.rgpd input[type="checkbox"] {
-    margin: 0;
-    width: 25px;
-    height: 25px;
-    transform: none; /* Pas de transformation */
+    margin: 0; /* Enlever le margin */
+    width: 20px; /* Taille réduite de la case à cocher */
+    height: 20px;
     cursor: pointer;
-    accent-color: #FF5722; /* Couleur personnalisée pour la case */
+    accent-color: #FF5722; /* Couleur personnalisée pour la case à cocher */
 }
 
 .form-group.rgpd label {
-    font-size: 0.9em;
-    line-height: 1.4;
+    font-size: 0.9em; /* Taille du texte du label */
     color: #FFFFFF;
     cursor: pointer;
     flex: 1; /* Le texte occupe le reste de l'espace */
@@ -133,124 +131,95 @@
     text-decoration: underline;
 }
 
-/* Ajouter un espacement supplémentaire pour le formulaire */
-.contact-form {
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
+.circleC {
+    position: absolute;
+    border-radius: 50%;
+    z-index:-1;
+    opacity: 0.3;
+    border: 2px solid #FFFFFF;
+    animation: fadeInUp 2s ease-out forwards;
 }
 
-.confirmation {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
+.circle-top-contact {
+    top: -60vh;
+    left: -15vw;
+    width: 50vw;
+    height: 50vw;
 }
 
-.error {
-    background-color: #f44336;
-    color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
+.circle-bottom-contact {
+    bottom: -60vh;
+    right: -15vw;
+    width: 50vw;
+    height: 50vw;
 }
 
 /* Media Query pour les écrans de largeur maximale 768px */
 @media (max-width: 768px) {
     .container-contact {
-        max-width: 90%; /* Réduit la largeur pour les petits écrans */
-        padding: 20px; /* Ajuste les marges internes */
+        flex-direction: column; /* Passe la disposition en colonne sur les petits écrans */
+        align-items: center;
+        padding: 15px; /* Réduit la padding interne */
+    }
+
+    .contact-left {
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .contact-title {
-        font-size: 1.8em; /* Réduit la taille du titre */
-        margin-bottom: 15px;
+        font-size: 1.6em; /* Réduit la taille du titre sur les petits écrans */
     }
 
-    .form-group label {
-        font-size: 1em; /* Réduit la taille du label */
+    .contact-form {
+        width: 100%;  /* Formulaire occupe toute la largeur */
+        max-width: 100%;
     }
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 0.9em; /* Réduit la taille des champs */
-        padding: 8px; /* Réduit le padding interne */
-    }
-
-    .submit-button {
-        font-size: 1em; /* Réduit la taille du texte */
-        padding: 10px; /* Ajuste le padding */
-    }
-
-    .form-group.rgpd {
-        flex-direction: column; /* Réorganise le texte et la case à cocher */
-        gap: 10px; /* Réduit l'espacement */
-        padding: 10px;
-    }
-
     .circle-top-contact {
-        width: 40vw; /* Augmente légèrement la taille des cercles */
-        height: 40vw;
         top: -10vh;
-        left: -10vw;
+        left: -20vw;
+        width: 80vw;
+        height: 80vw;
+        max-width: 400px;
+        max-height: 400px;
     }
 
     .circle-bottom-contact {
-        width: 35vw;
-        height: 35vw;
         bottom: -10vh;
-        right: -10vw;
+        right: -20vw;
+        width: 80vw;
+        height: 80vw;
+        max-width: 400px;
+        max-height: 400px;
     }
+
 }
+
 
 /* Media Query pour les écrans entre 769px et 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     .container-contact {
-        max-width: 80%; /* Augmente légèrement la largeur */
-        padding: 30px; /* Ajuste les marges internes */
+        padding: 25px;
     }
 
     .contact-title {
-        font-size: 2em; /* Taille intermédiaire du titre */
-        margin-bottom: 18px;
+        font-size: 1.7em; /* Taille intermédiaire pour le titre */
     }
 
-    .form-group label {
-        font-size: 1.05em; /* Taille intermédiaire des labels */
+    .contact-form {
+        max-width: 500px; /* Ajuste légèrement la largeur */
     }
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 1em; /* Taille standard */
-        padding: 10px; /* Padding légèrement réduit */
-    }
-
-    .submit-button {
-        font-size: 1.1em; /* Taille intermédiaire du bouton */
-        padding: 12px; /* Ajustement du padding */
-    }
-
-    .form-group.rgpd {
-        gap: 12px; /* Espacement réduit */
-        padding: 12px;
-    }
-
     .circle-top-contact {
-        width: 35vw;
-        height: 35vw;
-        top: -8vh;
-        left: -8vw;
+        top: -10vh;
+        left: -20vw;
+        width: 60vw;
+        height: 60vw;
     }
 
     .circle-bottom-contact {
-        width: 30vw;
-        height: 30vw;
-        bottom: -8vh;
-        right: -8vw;
+        bottom: -10vh;
+        right: -20vw;
+        width: 60vw;
+        height: 60vw;
     }
 }

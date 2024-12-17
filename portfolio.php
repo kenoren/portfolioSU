@@ -35,32 +35,33 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
 
 
 
     </head>
     <body>
     <section id="page1" class="page page-accueil">
-        <header class="navbar">
-            <div class="logo">
-                <img src="./assets/images/logo.png" alt="Logo">
-            </div>
-        
-            <!-- Bouton hamburger pour le menu mobile -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="Logo">
+        </div>
 
-            <nav id="navbar">
-                <a href="#page1">Accueil</a>
-                <a href="#page2">Compétences</a>
-                <a href="#page3">Réalisations</a>
-                <a href="#page4">Formation</a>
-                <a href="#page5">Contact</a>
-            </nav>
-        </header>
+        <!-- Bouton hamburger pour le menu mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="navbar">
+            <a href="#page1">Accueil</a>
+            <a href="#page2">Compétences</a>
+            <a href="#page3">Réalisations</a>
+            <a href="#page4">Formation</a>
+            <a href="#page5">Contact</a>
+        </nav>
+    </header>
 
         <!-- Section Accueil (Hero) -->
         <section id="hero" class="hero">

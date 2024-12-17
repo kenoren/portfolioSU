@@ -121,41 +121,47 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!-- Formulaire de contact -->
 <section id="page5" class="page-contact">
     <div class="container-contact">
-        <h1 class="contact-title">Contactez-moi</h1>
+    <div class="circleC circle-top-contact"></div>
+    <div class="circleC circle-bottom-contact"></div>
+        <div class="contact-left">
+            <h1 class="contact-title">Contactez-moi</h1>
+        </div>
 
-        <form id="contactForm" method="post" action="portfolio.php#page5" class="contact-form">
-            <?php echo $confirmation; // Afficher le message de confirmation ?>
-            
-            <?php foreach ($formulaire as $champ): ?>
-                <div class="form-group">
-                    <label for="<?php echo str_replace(' ', '_', $champ['nom']); ?>">
-                        <?php echo htmlspecialchars($champ['nom']); ?><?php echo $champ['obligatoire'] ? '*' : ''; ?>
-                    </label>
+        <div class="contact-right">
+            <form id="contactForm" method="post" action="portfolio.php#page5" class="contact-form">
+                <?php echo $confirmation; // Afficher le message de confirmation ?>
 
-                    <?php if ($champ['type'] === 'text' || $champ['type'] === 'email'): ?>
-                        <input type="<?php echo $champ['type']; ?>" 
-                               id="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
-                               name="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
-                               required="<?php echo $champ['obligatoire'] ? 'required' : ''; ?>">
-                    <?php elseif ($champ['type'] === 'textarea'): ?>
-                        <textarea id="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
-                                  name="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
-                                  required="<?php echo $champ['obligatoire'] ? 'required' : ''; ?>"></textarea>
-                    <?php endif; ?>
+                <?php foreach ($formulaire as $champ): ?>
+                    <div class="form-group">
+                        <label for="<?php echo str_replace(' ', '_', $champ['nom']); ?>">
+                            <?php echo htmlspecialchars($champ['nom']); ?><?php echo $champ['obligatoire'] ? '*' : ''; ?>
+                        </label>
 
-                    <?php if ($champ['type'] === 'rgpd'): ?>
-                        <div class="form-group rgpd">
-                            <input type="checkbox" id="rgpd_accept" name="rgpd_accept" required>
-                            <label for="rgpd_accept"><?php echo htmlspecialchars($champ['texte']); ?></label>
-                        </div>
-                    <?php elseif ($champ['type'] === 'captcha'): ?>
-                        <div class="g-recaptcha" data-sitekey="6Ld68YUqAAAAADx11yUJmzZUHgtQ3QyVozazUuPQ"></div>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
+                        <?php if ($champ['type'] === 'text' || $champ['type'] === 'email'): ?>
+                            <input type="<?php echo $champ['type']; ?>" 
+                                   id="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
+                                   name="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
+                                   required="<?php echo $champ['obligatoire'] ? 'required' : ''; ?>">
+                        <?php elseif ($champ['type'] === 'textarea'): ?>
+                            <textarea id="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
+                                      name="<?php echo str_replace(' ', '_', $champ['nom']); ?>" 
+                                      required="<?php echo $champ['obligatoire'] ? 'required' : ''; ?>"></textarea>
+                        <?php endif; ?>
 
-            <button type="submit" class="submit-button">Envoyer</button>
-        </form>
+                        <?php if ($champ['type'] === 'rgpd'): ?>
+                            <div class="form-group rgpd">
+                                <input type="checkbox" id="rgpd_accept" name="rgpd_accept" required>
+                                <label for="rgpd_accept"><?php echo htmlspecialchars($champ['texte']); ?></label>
+                            </div>
+                        <?php elseif ($champ['type'] === 'captcha'): ?>
+                            <div class="g-recaptcha" data-sitekey="6Ld68YUqAAAAADx11yUJmzZUHgtQ3QyVozazUuPQ"></div>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+
+                <button type="submit" class="submit-button">Envoyer</button>
+            </form>
+        </div>
     </div>
 </section>
 

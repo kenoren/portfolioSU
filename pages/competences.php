@@ -18,6 +18,8 @@ $competences = $utilisateur['competences'] ?? [];
 
 <section id="page2" class="page page-competences">
     <div class="container">
+    <div class="circleComp circle-top-competences"></div>
+    <div class="circleComp circle-bottom-competences"></div>
         <div class="competences">
             <h1>COMPÉTENCES</h1>
             <?php

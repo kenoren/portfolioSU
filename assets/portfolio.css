@@ -173,54 +173,42 @@ nav.open {
 
 /* Hamburger */
 .hamburger {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    width: 35px;
-    height: 30px; /* Hauteur totale plus compacte */
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-50%);
     display: none;
+    position: absolute; /* Position relative à la navbar */
+    top: 50%; /* Centré verticalement dans la navbar */
+    right: 20px; /* Distance du bord droit */
+    transform: translateY(-50%); /* Ajuste pour centrer parfaitement */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10; /* Assure qu'il reste au-dessus des autres éléments */
 }
+
 
 .hamburger span {
-    position: absolute;
-    height: 3px; /* Épaisseur des barres */
-    width: 100%; /* Largeur complète */
-    background: #333; /* Couleur des barres */
+    display: block;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    border-radius: 2px; /* Arrondi léger pour un rendu moderne */
 }
 
-/* Placement des barres avec un espacement réduit */
-.hamburger span:nth-child(1) {
-    top: 6px; /* Espacement réduit */
-}
-
-.hamburger span:nth-child(2) {
-    top: 50%; /* Barre centrale centrée */
-    transform: translateY(-50%);
-}
-
-.hamburger span:nth-child(3) {
-    bottom: 6px; /* Espacement réduit */
-}
-
-/* Animation pour former la croix */
+/* Animation pour le hamburger actif */
 .hamburger.open span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg); /* Barre du haut tourne et se centre */
+    transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
-    opacity: 0; /* Disparition de la barre centrale */
+    opacity: 0;
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg); /* Barre du bas tourne et se centre */
+    transform: translateY(-8px) rotate(-45deg);
 }
+
+
 
 @media (max-width: 480px) {
     .hero-content {
