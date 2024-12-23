@@ -1,5 +1,5 @@
 <?php
-// Inclure les fichiers nécessaires de PHPMailer
+
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require 'PHPMailer/src/Exception.php';
@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Symfony\Component\Yaml\Yaml;
 
-// Charger le contenu YAML
+
 try {
     $contenu = Yaml::parseFile('data/contact.yaml');
 } catch (Exception $e) {
@@ -16,14 +16,14 @@ try {
     exit;
 }
 
-// Récupération des données de configuration
+
 $utilisateur = $contenu['utilisateur'] ?? [];
 $formulaire = $utilisateur['contact']['formulaire']['champs'] ?? [];
 $confirmation_message = $utilisateur['contact']['formulaire']['message_confirmation'] ?? '';
 $email_destinataire = $utilisateur['contact']['envoi_email']['adresse_destinataire'] ?? '';
 $sujet_defaut = $utilisateur['contact']['envoi_email']['sujet_par_defaut'] ?? '';
 
-// Variable pour afficher le message de confirmation
+
 $confirmation = ''; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -34,13 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $captchaResponse = $_POST['g-recaptcha-response'] ?? '';
     $rgpdAccepted = isset($_POST['rgpd_accept']);
 
-    // Validation
+ 
     if (!$rgpdAccepted) {
         $confirmation = "<p class='error'>Vous devez accepter les conditions liées à la collecte de vos données.</p>";
     } elseif (empty($captchaResponse)) {
         $confirmation = "<p class='error'>Veuillez vérifier que vous n'êtes pas un robot.</p>";
     } else {
-        // Vérification reCAPTCHA
+       
         $secretKey = '6Ld68YUqAAAAACb4Jy0Zryprw0Y9WMvtHw6TdM9k';
         $remoteIp = $_SERVER['REMOTE_ADDR'];
         $url = 'https://www.google.com/recaptcha/api/siteverify';
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (intval($responseKeys["success"]) !== 1) {
             $confirmation = "<p class='error'>Vérification reCAPTCHA échouée. Veuillez réessayer.</p>";
         } else {
-            // Envoi de l'email
+       
             $mail = new PHPMailer(true);
             try {
                 $mail->isSMTP();
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-<!-- Formulaire de contact -->
+
 <section id="page5" class="page-contact">
     <div class="container-contact">
     <div class="circleC circle-top-contact"></div>
@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <div class="contact-right">
             <form id="contactForm" method="post" action="portfolio.php#page5" class="contact-form">
-                <?php echo $confirmation; // Afficher le message de confirmation ?>
+                <?php echo $confirmation; ?>
 
                 <?php foreach ($formulaire as $champ): ?>
                     <div class="form-group">
@@ -165,7 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 </section>
 
-<!-- Script reCAPTCHA -->
+
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 

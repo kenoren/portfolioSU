@@ -1,9 +1,9 @@
 <?php
-require 'vendor/autoload.php'; // Chargez l'autoloader de Composer
+require 'vendor/autoload.php'; 
 
 use Symfony\Component\Yaml\Yaml;
 
-// Charger le contenu du fichier YAML
+
 try {
     $contenu = Yaml::parseFile('data/competences.yaml');
 } catch (Exception $e) {
@@ -11,7 +11,6 @@ try {
     exit;
 }
 
-// Extraire les données utilisateur
 $utilisateur = $contenu['utilisateur'] ?? [];
 $competences = $utilisateur['competences'] ?? [];
 ?>
@@ -23,16 +22,16 @@ $competences = $utilisateur['competences'] ?? [];
         <div class="competences">
             <h1>COMPÉTENCES</h1>
             <?php
-                // Génération des barres de progression pour les compétences
+               
                 foreach ($competences as $competence_domaine) {
-                    // Afficher le domaine de compétence
+                   
                     $domaine = htmlspecialchars($competence_domaine['domaine']);
                     echo "<h2>$domaine</h2>";
 
-                    // Parcourir les compétences dans ce domaine
+                   
                     foreach ($competence_domaine['competences'] as $comp) {
                         $compName = htmlspecialchars($comp['nom']);
-                        $niveau = (int)$comp['niveau']; // S'assurer que le niveau est un entier
+                        $niveau = (int)$comp['niveau']; 
 
                         echo "<div class='skill'>";
                         echo "<span class='skill-name'>$compName</span>";

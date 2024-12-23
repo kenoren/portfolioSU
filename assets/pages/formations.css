@@ -1,6 +1,5 @@
-/* Section principale Formations */
 .page-formations {
-    background-color: #fff; /* Fond légèrement gris pour adoucir */
+    background-color: #fff;
     color: #333;
     padding: 60px 20px;
     text-align: center;
@@ -9,7 +8,6 @@
     overflow: hidden;
 }
 
-/* Titre des formations */
 .formations-title {
     font-size: 2.8em;
     font-weight: bold;
@@ -21,17 +19,15 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* Grille des formations */
 .formations-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes responsives */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     justify-items: center;
     padding-top: 20px;
     position: relative;
 }
 
-/* Cercles décoratifs (page Formations) */
 .circleF {
     position: absolute;
     border-radius: 50%;
@@ -39,23 +35,22 @@
     opacity: 0.3;
     border: 2px solid #666;
     animation: fadeInUp 2s ease-out forwards;
-  }
-  
-  .circle-top-formations {
+}
+
+.circle-top-formations {
     top: -60vh;
     left: -15vw;
     width: 50vw;
     height: 50vw;
-  }
-  
-  .circle-bottom-formations {
+}
+
+.circle-bottom-formations {
     bottom: -60vh;
     right: -15vw;
     width: 50vw;
     height: 50vw;
-  }
+}
 
-/* Élément individuel de formation */
 .formation-item {
     display: flex;
     flex-direction: column;
@@ -71,12 +66,6 @@
     position: relative;
 }
 
-/*.formation-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}*/
-
-/* Icône de la formation */
 .formation-icon {
     width: 100px;
     height: 100px;
@@ -87,7 +76,6 @@
     filter: grayscale(0%);
 }
 
-/* Nom de l'école */
 .formation-ecole {
     font-size: 1.2em;
     font-weight: bold;
@@ -96,14 +84,12 @@
     letter-spacing: 0.5px;
 }
 
-/* Diplôme de la formation */
 .formation-diplome {
     font-size: 1.1em;
     color: #555;
     margin-top: 5px;
 }
 
-/* Dates de la formation */
 .formation-dates {
     font-size: 1em;
     color: #777;
@@ -111,14 +97,12 @@
     font-style: italic;
 }
 
-/* Lieu de la formation */
 .formation-lieu {
     font-size: 1em;
     color: #777;
     margin-top: 5px;
 }
 
-/* Contenu de la formation */
 .formation-contenu {
     font-size: 0.95em;
     color: #555;
@@ -130,7 +114,6 @@
     line-height: 1.6;
 }
 
-/* Bouton de téléchargement du CV */
 .cv-link {
     text-align: center;
     margin-top: 50px;
@@ -157,7 +140,6 @@
     background-color: #ff4a26;
 }
 
-/* Animation des cercles */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -169,20 +151,19 @@
     }
 }
 
-/* Media Queries pour les écrans entre 580px et 870px (formations en vertical) */
 @media (min-width: 580px) and (max-width: 870px) {
     .formations-container {
-        grid-template-columns: 1fr;  /* Une seule colonne */
-        gap: 20px;  /* Espacement entre les éléments */
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .formation-item {
-        max-width: 100%;  /* Chaque item occupe toute la largeur de la colonne */
-        padding: 20px 15px;  /* Ajuster le padding pour plus de confort */
+        max-width: 100%;
+        padding: 20px 15px;
     }
 
     .formations-title {
-        font-size: 2.5em;  /* Taille du titre adaptée */
-        margin-bottom: 30px;  /* Espacement sous le titre */
+        font-size: 2.5em;
+        margin-bottom: 30px;
     }
 }

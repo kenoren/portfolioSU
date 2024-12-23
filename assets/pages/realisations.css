@@ -7,38 +7,36 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
-  overflow: hidden; /* Cache le débordement des cercles positionnés */
+  overflow: hidden;
 }
 
-/* Container for projects */
 .projects {
   display: flex;
   justify-content: space-between;
   gap: 40px;
   position: relative;
   z-index: 1;
-  flex-wrap: wrap; /* Permet aux projets de passer à la ligne si nécessaire */
+  flex-wrap: wrap;
 }
 
-/* Individual project settings */
 .project {
-  width: 25vw; /* Largeur des projets */
-  margin-bottom: 20px; /* Espacement entre les projets */
-  text-align: center; /* Centrer le texte et l'image */
+  width: 25vw;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .project img {
-  width: 100%; /* Assure que l'image prend toute la largeur de son conteneur */
+  width: 100%;
   height: auto;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer; /* Montre que l'image est cliquable */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation pour le survol */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project img:hover {
-  transform: scale(1.05); /* Légère augmentation de la taille au survol */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre renforcée au survol */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project h2 {
@@ -54,7 +52,6 @@
   margin-top: 5px;
 }
 
-/* Title Styling */
 .realisations-title {
   position: absolute;
   bottom: 20px;
@@ -64,14 +61,12 @@
   z-index: 2;
 }
 
-/* Cercles décoratifs */
 .circleR {
   position: absolute;
   border-radius: 50%;
   z-index: 0;
   opacity: 0.3;
   border: 2px solid #666;
-
 }
 
 .circle-top-realisations {
@@ -102,11 +97,11 @@
   }
 
   .project p {
-    display: none; /* Masque la description sur petits écrans */
+    display: none;
   }
 
   .realisations-title {
-    font-size: 3em; /* Taille plus petite sur petits écrans */
+    font-size: 3em;
     padding-top: 15vh;
   }
 
@@ -139,11 +134,11 @@
   }
 
   .project p {
-    display: none; /* Masque la description sur petits écrans */
+    display: none;
   }
 
   .realisations-title {
-    font-size: 3em; /* Taille plus petite pour tablettes */
+    font-size: 3em;
     padding-top: 20vh;
   }
 

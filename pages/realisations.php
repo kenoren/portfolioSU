@@ -1,9 +1,9 @@
 <?php
-require 'vendor/autoload.php'; // Chargez l'autoloader de Composer
+require 'vendor/autoload.php';
 
 use Symfony\Component\Yaml\Yaml;
 
-// Charger le contenu du fichier YAML
+
 try {
     $contenu = Yaml::parseFile('data/realisations.yaml');
 } catch (Exception $e) {
@@ -11,7 +11,7 @@ try {
     exit;
 }
 
-// Extraire les données utilisateur
+
 $utilisateur = $contenu['utilisateur'] ?? [];
 $competences = $utilisateur['competences'] ?? [];
 $realisations = $utilisateur['realisations'] ?? [];

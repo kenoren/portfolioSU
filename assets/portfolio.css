@@ -1,4 +1,3 @@
-/* Réinitialisation de base */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
     scroll-behavior: smooth;
     height: 100%;
     width: 100%;
-    background-color: #D8D9D0; /* Couleur de fond */
+    background-color: #D8D9D0;
     color: #333;
 }
 
@@ -20,12 +19,10 @@ body {
     scroll-snap-align: start;
 }
 
-/* Quand le menu est ouvert */
 nav.open {
-    transform: translateX(0); /* Le menu glisse dans la vue */
+    transform: translateX(0);
 }
 
-/* Style des liens du menu */
 .navbar nav a {
     margin: 0 1vw;
     text-decoration: none;
@@ -41,15 +38,15 @@ nav.open {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70vw;               /* Largeur spécifique */
-    margin: 0 auto;            /* Centre horizontalement */
+    width: 70vw;
+    margin: 0 auto;
     padding: 2vh 4vw;
     background-color: #fff;
     font-size: 1.2rem;
     position: fixed;
     top: 20px;
-    left: 0;                   /* Assure qu'elle commence au bord gauche */
-    right: 0;                  /* Assure qu'elle termine au bord droit */
+    left: 0;
+    right: 0;
     box-shadow: 0px 0.4vw 1vw rgba(0, 0, 0, 0.3);
     z-index: 10;
     border-radius: 0.5vw;
@@ -64,8 +61,8 @@ nav.open {
     transform: translateY(-50%);
     height: 10vh;
     width: auto;
-    max-height: 60px;  /* Limite la taille maximale du logo */
-    max-width: 120px;  /* Limite la largeur maximale */
+    max-height: 60px;
+    max-width: 120px;
 }
 
 .hero {
@@ -89,7 +86,7 @@ nav.open {
 }
 
 .first-name {
-    font-size: 5vw; /* Ajustable pour correspondre exactement */
+    font-size: 5vw;
     font-weight: 300;
 }
 
@@ -100,14 +97,14 @@ nav.open {
 }
 
 .last-name {
-    font-size: 7vw; /* Ajustable pour correspondre exactement */
+    font-size: 7vw;
     font-weight: 700;
 }
 
 .highlight {
-    color: #FF5722; /* Couleur personnalisée pour mettre en valeur */
-    font-family: 'Roboto', sans-serif; /* Utilise Roboto */
-    font-weight: 100; /* Applique le poids thin (100) */
+    color: #FF5722;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     font-size: 7vw;
     margin: 0;
 }
@@ -119,7 +116,7 @@ nav.open {
 }
 
 .hero-image img {
-    width: 200px; /* Ajustable pour correspondre exactement */
+    width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
@@ -131,12 +128,10 @@ nav.open {
     position: absolute;
     border-radius: 50%;
     z-index: 0;
-    /*opacity: 0.3;*/
     border: 2px solid #666;
     animation: fadeInUp 2s ease-out forwards;
 }
 
-/* Cercles pour les écrans de grande taille */
 .circle-top {
     top: -20vh;
     left: -15vw;
@@ -151,41 +146,19 @@ nav.open {
     height: 50vw;
 }
 
-/*@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px); 
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}*/
-
-/* Hamburger */
 .hamburger {
     display: none;
-    position: absolute; /* Position relative à la navbar */
-    top: 50%; /* Centré verticalement dans la navbar */
-    right: 20px; /* Distance du bord droit */
-    transform: translateY(-50%); /* Ajuste pour centrer parfaitement */
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 10; /* Assure qu'il reste au-dessus des autres éléments */
+    z-index: 10;
 }
-
 
 .hamburger span {
     display: block;
@@ -195,7 +168,6 @@ nav.open {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Animation pour le hamburger actif */
 .hamburger.open span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -208,16 +180,14 @@ nav.open {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-
-
 @media (max-width: 480px) {
     .hero-content {
         padding-top: 60px;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centre le contenu horizontalement */
-        justify-content: center; /* Centre le contenu verticalement */
-        text-align: center; /* Assure que le texte est centré */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .first-name, .subtitle {
@@ -226,7 +196,7 @@ nav.open {
 
     .last-name, .highlight {
         font-size: 10vw;
-        margin: 0; /* Enlève les marges qui pourraient affecter le centrage */
+        margin: 0;
     }
 
     .hero-image img {
@@ -261,15 +231,14 @@ nav.open {
         width: 100%;
         padding: 1em;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease; /* Transition pour la navigation */
-        transform: translateY(-100%); /* Cache le menu */
-
+        transition: transform 0.3s ease;
+        transform: translateY(-100%);
     }
 
     nav.open {
         display: flex;
         flex-direction: column;
-        transform: translateY(0); /* Fait glisser le menu dans le viewport */
+        transform: translateY(0);
     }
 
     .hamburger {
@@ -277,10 +246,9 @@ nav.open {
     }
 
     .presentation {
-        font-size: 1rem; /* Réduction de la taille du texte */
-        width: 90%; /* Largeur relative augmentée */
+        font-size: 1rem;
+        width: 90%;
     }
-    
 }
 
 @media (max-width: 768px) {
@@ -288,9 +256,9 @@ nav.open {
         padding-top: 60px;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centre le contenu horizontalement */
-        justify-content: center; /* Centre le contenu verticalement */
-        text-align: center; /* Assure que le texte est centré */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .first-name, .subtitle {
@@ -299,7 +267,7 @@ nav.open {
 
     .last-name, .highlight {
         font-size: 10vw;
-        margin: 0; /* Enlève les marges qui pourraient affecter le centrage */
+        margin: 0;
     }
 
     .hero-image img {
@@ -334,14 +302,14 @@ nav.open {
         width: 100%;
         padding: 1em;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease; /* Transition pour la navigation */
-        transform: translateY(-100%); /* Cache le menu */
+        transition: transform 0.3s ease;
+        transform: translateY(-100%);
     }
 
     nav.open {
         display: flex;
         flex-direction: column;
-        transform: translateY(0); /* Fait glisser le menu dans le viewport */
+        transform: translateY(0);
     }
 
     .hamburger {
@@ -349,13 +317,11 @@ nav.open {
     }
 
     .presentation {
-        font-size: 1rem; /* Réduction de la taille du texte */
-        width: 90%; /* Largeur relative augmentée */
+        font-size: 1rem;
+        width: 90%;
     }
-
 }
 
-/* Responsive pour écrans moyens */
 @media (min-width: 769px) and (max-width: 1024px) {
     .hero-content {
         padding-top: 60px;
@@ -372,7 +338,7 @@ nav.open {
 
     .last-name, .highlight {
         font-size: 10vw;
-        margin: 0; /* Assure le centrage sans marges qui pourraient perturber */
+        margin: 0;
     }
 
     .hero-image img {
@@ -418,23 +384,21 @@ nav.open {
     }
 
     .presentation {
-        font-size: 1.1rem; /* Taille intermédiaire */
+        font-size: 1.1rem;
     }
-
 }
 
-/* Animation de la présentation avec fond qui devient blanc */
 .presentation {
     z-index: 5;
-    font-size: 1.2rem; /* Taille du texte */
-    line-height: 1.6; /* Espacement entre les lignes */
-    color: #555; /* Couleur du texte pour un bon contraste */
-    margin: 2rem auto; /* Espacement autour de l'élément */
-    width: 80%; /* Largeur relative pour un alignement centré */
-    max-width: 800px; /* Largeur maximale pour les grands écrans */
-    text-align: justify; /* Texte justifié pour une meilleure lisibilité */
-    background-color: #f9f9f9; /* Fond légèrement contrasté */
-    padding: 1.5rem; /* Espacement interne */
-    border-radius: 10px; /* Coins arrondis */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 800px;
+    text-align: justify;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
     box-shadow: 0px 0.4vw 1vw rgba(0, 0, 0, 0.3);
 }
